@@ -1,0 +1,14 @@
+<div class="header">
+    <h3 class="pull-left">
+      Andrew Thomas
+    </h3>
+  <ul class="nav-list pull-right">
+    <li ng-repeat="menuItem in menuItems">
+      <a ui-sref="main.{{menuItem.name | nospace}}">
+        <button class="nav-btn" ng-click="states.activeItem = menuItem.id" ng-class="{active: menuItem.id === states.activeItem}">
+          {{menuItem.name | capitalize:true}}
+        </button>
+      </a>
+    </li>
+  </ul>
+</div>
