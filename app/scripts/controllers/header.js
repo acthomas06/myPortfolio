@@ -22,11 +22,7 @@ angular.module('portfolioApp')
       },
       {
         id: 3,
-        name: 'java script'
-      },
-      {
-        id: 4,
-        name: 'd3'
+        name: 'javascript'
       }
     ];
 
@@ -43,8 +39,6 @@ angular.module('portfolioApp')
         $scope.states.activeItem = 2;
       } else if ($state.current.name === 'main.javascript') {
         $scope.states.activeItem = 3;
-      } else if ($state.current.name === 'main.d3') {
-        $scope.states.activeItem = 4;
       }
     };
     $scope.init();

@@ -20,7 +20,7 @@ angular
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     //Unmatched URL, route to...
-    $urlRouterProvider.otherwise("/index");
+    $urlRouterProvider.otherwise("/index/about");
 
     $stateProvider
       .state('main', {
@@ -40,8 +40,8 @@ angular
         url: "/php",
         views: {
           "content": {
-            templateUrl: "views/javascript.html",
-            controller: "JavascriptController"
+            templateUrl: "views/Php.html",
+            controller: "PhpController"
           }
         }
       })
@@ -49,8 +49,8 @@ angular
         url: "/about",
         views: {
           "content": {
-            templateUrl: "views/javascript.html",
-            controller: "JavascriptController"
+            templateUrl: "views/About.html",
+            controller: "AboutController"
           }
         }
       })
@@ -60,15 +60,6 @@ angular
           "content": {
             templateUrl: "views/javascript.html",
             controller: "JavascriptController"
-          }
-        }
-      })
-      .state('main.d3', {
-        url: "/d3",
-        views: {
-          "content": {
-            templateUrl: "views/d3.html",
-            controller: "D3Controller"
           }
         }
       })
