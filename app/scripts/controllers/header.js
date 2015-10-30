@@ -8,7 +8,7 @@
  * Controller of the portfolioApp
  */
 angular.module('portfolioApp')
-  .controller('HeaderController', ['$scope', '$state',  function ($scope, $state) {
+  .controller('HeaderController', ['$scope', '$state', function ($scope, $state) {
     $scope.states = {};
     $scope.states.activeItem = null;
     $scope.menuItems = [
@@ -25,12 +25,6 @@ angular.module('portfolioApp')
         name: 'javascript'
       }
     ];
-
-    $scope.capitalize = function () {
-      return this.toLowerCase().replace(/\b\w/g, function (m) {
-        return m.toUpperCase();
-      });
-    };
 
     $scope.init = function () {
       if ($state.current.name === 'main.about') {

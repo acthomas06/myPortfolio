@@ -11,5 +11,4 @@ angular.module('portfolioApp')
   .controller('MainController', ['$scope', function ($scope) {
 
 
-
   }]);

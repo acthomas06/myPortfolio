@@ -62,5 +62,5 @@ angular
             controller: "JavascriptController"
           }
         }
-      })
+      });
   });
