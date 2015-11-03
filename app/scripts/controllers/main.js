@@ -8,7 +8,16 @@
  * Controller of the portfolioApp
  */
 angular.module('portfolioApp')
-  .controller('MainController', ['$scope', function ($scope) {
+  .controller('MainController', ['$routeParams', '$location', '$route',
+    function ($routeParams, $location, $route) {
+      this.$route = $route;
+      this.$location = $location;
+      this.$routeParams = $routeParams;
+      this.aboutVisible = false;
 
+      this.init = function () {
+        this.aboutVisible = $location.path() === '/home/about'
+      };
 
+      this.init();
   }]);

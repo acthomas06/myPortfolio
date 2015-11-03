@@ -16,51 +16,19 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'headroom',
+    'ngRoute'
   ])
-  .config(function ($stateProvider, $urlRouterProvider) {
-    //Unmatched URL, route to...
-    $urlRouterProvider.otherwise("/index/about");
-
-    $stateProvider
-      .state('main', {
-        url: "/index",
-        views: {
-          "main_view": {
-            templateUrl: "views/main.html",
-            controller: "MainController"
-          },
-          "header_view": {
-            templateUrl: "views/header.html",
-            controller: "HeaderController"
-          }
-        }
+  .config(['$routeProvider', '$locationProvider',
+    function ($routeProvider, $locationProvider) {
+    $routeProvider
+      .when('/home/:pageId', {
+        templateUrl: '/views/main.html',
+        controller: 'MainController',
+        controllerAs: 'controller'
       })
-      .state('main.php', {
-        url: "/php",
-        views: {
-          "content": {
-            templateUrl: "views/Php.html",
-            controller: "PhpController"
-          }
-        }
-      })
-      .state('main.about', {
-        url: "/about",
-        views: {
-          "content": {
-            templateUrl: "views/About.html",
-            controller: "AboutController"
-          }
-        }
-      })
-      .state('main.javascript', {
-        url: "/javascript",
-        views: {
-          "content": {
-            templateUrl: "views/javascript.html",
-            controller: "JavascriptController"
-          }
-        }
+      .otherwise({
+        redirectTo: '/home/about'
       });
-  });
+
+  }]);

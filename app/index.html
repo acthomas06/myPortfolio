@@ -18,9 +18,11 @@
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div ui-view="header_view"></div>
-    <div ui-view="main_view"></div>
-
+    <ng-include src="'views/header.html'"></ng-include>
+    <div class="middle-wrapper" ng-controller="MainController as main">
+        <div ng-view></div>
+    </div>
+    <ng-include src="'views/footer.html'"></ng-include>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
        !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
@@ -43,19 +45,18 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="bower_components/headroom.js/dist/headroom.js"></script>
+    <script src="bower_components/headroom.js/dist/jQuery.headroom.js"></script>
+    <script src="bower_components/headroom.js/dist/angular.headroom.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js({.tmp,app}) scripts/scripts.js -->
         <script src="scripts/app.js"></script>
         <script src="scripts/controllers/main.js"></script>
-        <script src="scripts/controllers/about.js"></script>
-        <script src="scripts/controllers/php.js"></script>
         <script src="scripts/controllers/header.js"></script>
         <script src="scripts/filters/capitalize.js"></script>
         <script src="scripts/filters/nospace.js"></script>
-        <script src="scripts/controllers/javascript.js"></script>
         <script src="scripts/directives/typewrite.js"></script>
         <!-- endbuild -->
 </body>

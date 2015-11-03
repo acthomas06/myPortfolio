@@ -18,6 +18,9 @@ body {
   background-color: #f5f5f5;
 }
 
+h1, h2, h3, h4, h5 {
+  margin: 0 auto;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
@@ -28,9 +31,11 @@ body {
 
 /* Custom page header */
 .header {
-  border-bottom: 5px solid #f0ad4e;
+  position: fixed;
+  display: block;
   min-height: 5em;
-  background-color: #000;
+  background-color: #f5f5f5;
+  width: 100%;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -43,23 +48,26 @@ body {
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.wrapper {
-  height: 100vh;
+.bottom-wrapper {
+  height: 40vh;
   width: 100%;
-  margin: 0 auto;
 }
 
-.wrapper-child {
-  height: 100vh;
-  width: 100vh;
-  margin: 2em;
+.middle-wrapper {
+  background-color: #25677D;
+  height: 80vh;
+  width: 100%;
+  padding-top: 5em;
+
+  .wrapper-child {
+    height: 100%;
+    width: 100%;
+    margin: 10em 10em;
+  }
+
+  h3 {
+    margin: 1em;
+  }
 }
 
 .nav-list {
@@ -76,7 +84,6 @@ body {
   }
 
   .active {
-    border: 5px solid #f0ad4e;
     background-color:#f5f5f5;
   }
 }
@@ -84,15 +91,19 @@ body {
 button {
   border-top: none;
   border-left: none;
-  border-bottom: 5px solid #f0ad4e;
-  background-color: #000;
+  border-bottom: none;
+  background-color: #f5f5f5;
   padding: 0;
   outline: none;
 }
 
 button:hover {
-  background-color: #f5f5f5;
-  border-bottom: none;
+  background-color: #6398AA;
+  -webkit-transition: background-color .35s linear;
+  -moz-transition: backgroud-color .35s linear;
+  -o-transition: background-color .35s linear;
+  -ms-transition: background-color .35s linear;
+  transition: background-color .35s linear;
 }
 
 .image-frame {
@@ -100,6 +111,15 @@ button:hover {
   background-image: url("/images/AndrewThomas-Medium.jpg");
 }
 
+.headroom--pinned {
+  transition: transform .25s ease-in;
+  transform: translateY(0%);
+}
+
+.headroom--unpinned {
+  transition: transform .25s ease-in;
+  transform: translateY(-100%);
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
