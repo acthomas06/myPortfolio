@@ -11,7 +11,8 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "angular-ui-router": "~0.2.15",
-    "headroom.js": "~0.7.0"
+    "headroom.js": "~0.7.0",
+    "d3": "~3.5.6"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0",

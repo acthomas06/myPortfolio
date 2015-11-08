@@ -13,11 +13,5 @@ angular.module('portfolioApp')
       this.$route = $route;
       this.$location = $location;
       this.$routeParams = $routeParams;
-      this.aboutVisible = false;
 
-      this.init = function () {
-        this.aboutVisible = $location.path() === '/home/about'
-      };
-
-      this.init();
   }]);

@@ -55,14 +55,19 @@ h1, h2, h3, h4, h5 {
 
 .middle-wrapper {
   background-color: #25677D;
-  height: 80vh;
+  height: 60vh;
   width: 100%;
   padding-top: 5em;
 
   .wrapper-child {
-    height: 100%;
-    width: 100%;
-    margin: 10em 10em;
+    height: 25%;
+    width: 75%;
+    margin: 5em auto;
+  }
+
+  .graph-wrapper {
+    margin: 0 auto;
+    width: 50%;
   }
 
   h3 {
