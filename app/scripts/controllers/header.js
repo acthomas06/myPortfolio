@@ -10,6 +10,10 @@
 angular.module('portfolioApp')
   .controller('HeaderController', [
     function () {
+      this.menuObject = {
+          item: -1
+        };
+
       this.menuItems = [
         {
           id: 1,

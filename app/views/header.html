@@ -1,17 +1,19 @@
 <div ng-controller="HeaderController as header">
-  <headroom offset="100" tolerance="5"
-            classes='{"initial":"header","pinned":"headroom--pinned","unpinned":"headroom--unpinned"}'>
-      <h3 class="pull-left title">
-        Andrew Thomas
-      </h3>
+  <div class="header">
+    <img alt="Portfolio Pic" height="70px" width="70px" class="image-frame pull-left"
+     src="/images/AndrewThomas-Medium.jpg"></img>
+    <h3 typewrite type-delay="125" blink-cursor="false" initial-delay="1s"
+        text="Hi, my name is Andrew."
+        class="pull-left">
+    </h3>
     <ul class="nav-list pull-right">
-      <li ng-repeat="menuItem in header.menuItems">
+      <li ng-repeat="menuItem in header.menuItems" ng-click="menuObject.item = menuItem.id">
         <a href="#/home/{{menuItem.name}}">
-          <button class="nav-btn">
+          <button class="nav-btn" ng-class="{active: menuObject.item === $index}">
             {{menuItem.name | capitalize:true}}
           </button>
         </a>
       </li>
     </ul>
-  </headroom>
+  </div>
 </div>

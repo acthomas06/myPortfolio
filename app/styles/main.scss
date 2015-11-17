@@ -39,9 +39,10 @@ h1, h2, h3, h4, h5 {
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
-    margin: auto;
+    padding: 0 1em 0 1em;
+    margin: 4.5px auto;
     line-height: 3em;
-    color: #337ab7;
+    color: #094C83;
   }
   .pull-right {
     float: right;
@@ -54,8 +55,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .middle-wrapper {
-  background-color: #25677D;
-  height: 60vh;
+  background-color: #7EB1DC;
+  height: 80vh;
   width: 100%;
   padding-top: 5em;
 
@@ -86,6 +87,7 @@ h1, h2, h3, h4, h5 {
     width: 12em;
     height: 4.8em;
     font-weight: 700;
+    color: #094C83;
   }
 
   .active {
@@ -100,18 +102,51 @@ button {
   background-color: #f5f5f5;
   padding: 0;
   outline: none;
+
+  -webkit-transition: background-color .5s ease, color .5s ease;
+  -moz-transition: background-color .5s ease, color .5s ease;
+  -o-transition: background-color .5s ease, color .5s ease;
+  -ms-transition: background-color .5s ease, color .5s ease;
+  transition: background-color .5s ease, color .5s ease;
 }
 
-button:hover {
+button.nav-btn:hover {
+  color: #f5f5f5;
+  background-color: #7EB1DC;  
+}
+
+.split {
+  padding: 4em 0 4em 0;
+  height: 10em;
+}
+
+.split:hover {
+  cursor: pointer;
   background-color: #6398AA;
-  -webkit-transition: background-color .35s linear;
-  -moz-transition: backgroud-color .35s linear;
-  -o-transition: background-color .35s linear;
-  -ms-transition: background-color .35s linear;
-  transition: background-color .35s linear;
+  color: #f5f5f5;
+  border-radius: 2em;
+  -webkit-transition: color .35s, background-color .35s, border-radius .35s linear;
+  -moz-transition: color .35s, background-color .35s, border-radius .35s linear;
+  -o-transition: color .35s, background-color .35s, border-radius .35s linear;
+  -ms-transition: color .35s, background-color .35s, border-radius .35s linear;
+  transition: color .35s, background-color .35s, border-radius .35s linear;
+}
+
+.split:first-child {
+  border-right: 2px solid black;
+}
+
+.split:last-child {
+  border-left: 2px solid black;
+}
+
+.split:nth-child(2) {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
 }
 
 .image-frame {
+  margin: 5px;
   border-radius: 40px;
   background-image: url("/images/AndrewThomas-Medium.jpg");
 }

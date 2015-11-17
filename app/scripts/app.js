@@ -21,18 +21,26 @@ angular
   ])
   .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
-      $urlRouterProvider.otherwise('/home/about');
+      $urlRouterProvider.otherwise('/');
 
       $stateProvider
         .state('main', {
-          url: '/home',
+          url: '/',
           views: {
             "header_view": {
               templateUrl: 'views/header.html',
               controller: 'HeaderController'
             },
-            "main_view": {
-              templateUrl: 'views/main.html',
+            "about_view": {
+              templateUrl: 'views/about.html',
+              controller: 'MainController'
+            },
+            "project_view": {
+              templateUrl: 'views/projects.html',
+              controller: 'MainController'
+            },
+            "contact_view": {
+              templateUrl: 'views/contact.html',
               controller: 'MainController'
             },
             "footer_view" : {
@@ -40,29 +48,5 @@ angular
               controller: 'FooterController'
             }
           }
-        })
-        .state('main.about', {
-          url: '/about',
-          views: {
-            "content_view": {
-              templateUrl: 'views/about.html'
-            }
-          }
-        })
-        .state('main.projects', {
-          url: '/projects',
-          views: {
-            "content_view": {
-              templateUrl: 'views/projects.html'
-            }
-          }
-        })
-        .state('main.contact', {
-          url: '/contact',
-          views: {
-            "content_view": {
-              templateUrl: 'views/contact.html'
-            }
-          }
-      });
+        });
   }]);

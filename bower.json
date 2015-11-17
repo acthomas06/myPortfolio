@@ -12,7 +12,10 @@
     "angular-touch": "^1.4.0",
     "angular-ui-router": "~0.2.15",
     "headroom.js": "~0.7.0",
-    "d3": "~3.5.6"
+    "d3": "~3.5.6",
+    "angular-bootstrap": "~0.14.3",
+    "bootstrap": "~3.3.5",
+    "d3-tip": "~0.6.7"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0",
@@ -28,5 +31,8 @@
         "dist/js/bootstrap.js"
       ]
     }
+  },
+  "resolutions": {
+    "d3": "3.5.5"
   }
 }
