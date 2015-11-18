@@ -8,24 +8,20 @@
  * Controller of the portfolioApp
  */
 angular.module('portfolioApp')
-  .controller('HeaderController', [
-    function () {
+  .controller('HeaderController', [ '$scope', '$location', 'anchorSmoothScroll',
+    function ($scope, $location, anchorSmoothScroll) {
       this.menuObject = {
           item: -1
         };
 
-      this.menuItems = [
-        {
-          id: 1,
-          name: 'about'
-        },
-        {
-          id: 2,
-          name: 'projects'
-        },
-        {
-          id: 3,
-          name: 'contact'
-        }
-      ];
+      this.menuItems = ['about', 'projects', 'contact'];
+
+      $scope.gotoElement = function (eID){
+        // set the location.hash to the id of
+        // the element you wish to scroll to.
+        $location.hash(eID);
+
+        // call $anchorScroll()
+        anchorSmoothScroll.scrollTo(eID);
+      };
   }]);

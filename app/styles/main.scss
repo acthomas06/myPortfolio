@@ -1,6 +1,7 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "font-awesome/scss/font-awesome.scss";
 // endbower
 
 .browsehappy {
@@ -13,13 +14,21 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 body {
   padding: 0;
   height: 100%;
-  font-family: Trebuchet MS, Verdana, sans-serif;
+  font-family: "FontAwesome", Trebuchet MS, Verdana, sans-serif;
   font-size: 16px;
   background-color: #f5f5f5;
 }
 
 h1, h2, h3, h4, h5 {
   margin: 0 auto;
+}
+
+.white {
+  color: #f5f5f5;
+}
+
+.bold {
+  font-weight: 700;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -30,10 +39,10 @@ h1, h2, h3, h4, h5 {
 }
 
 /* Custom page header */
-.header {
+section.header {
   position: fixed;
   display: block;
-  min-height: 5em;
+  height: 5em;
   background-color: #f5f5f5;
   width: 100%;
 
@@ -49,35 +58,111 @@ h1, h2, h3, h4, h5 {
   }
 }
 
-.bottom-wrapper {
-  height: 40vh;
-  width: 100%;
+.contact {
+  background-color: #002C3D;
 }
 
-.middle-wrapper {
-  background-color: #7EB1DC;
-  height: 80vh;
-  width: 100%;
+.contact .col-lg-8,
+.projects .col-lg-8,
+.about .col-lg-8 {
+  visibility: hidden;
+  width: 50%;
+  height: 5em;
+  top: 0px;
+  margin-left: 4em;
+  padding: 1em 0 1em 1em;
+  -webkit-text-stroke: 1px black;
+}
+
+.about.col-lg-8.about-header-sticky,
+.contact.col-lg-8.contact-header-sticky,
+.projects.col-lg-8.projects-header-sticky {
+  visibility: visible;
+}
+
+.about-header-sticky {
+  padding: 1em 0 1em 1em;
+  -webkit-text-stroke: 1px black;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.about-header-sticky::after {
+  content: '\f02a';
+  font-size: 3em;
+  color: #f5f5f5;
+  -webkit-text-stroke: 1px black;
+
+  position: absolute;
+  top: 0;
+  left: 3.5em;
+}
+
+.contact-header-sticky {
+  padding: 1em 0 1em 1em;
+  -webkit-text-stroke: 1px black;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.contact-header-sticky::after {
+  content: '\f0a1';
+  font-size: 3em;
+  color: #f5f5f5;
+  -webkit-text-stroke: 1px black;
+
+  position: absolute;
+  top: 0;
+  left: 3.5em;
+}
+
+.projects-header-sticky {
+  padding: 1em 0 1em 1em;
+  -webkit-text-stroke: 1px black;
+  border-bottom: 2px solid #f5f5f5;
+}
+
+.projects-header-sticky::after {
+  content: '\f121';
+  font-size: 3em;
+  color: #f5f5f5;
+  -webkit-text-stroke: 1px black;
+
+  position: absolute;
+  top: 0;
+  left: 3.5em;
+}
+
+.projects {
+  background-color: #001219;
+}
+
+.about {
+  background-color: #f5f5f5;
+}
+
+.footer {
+  background-color: #f5f5f5;
+}
+
+section.about {
   padding-top: 5em;
+  height: 80vh;
+}
 
-  .wrapper-child {
-    height: 25%;
-    width: 75%;
-    margin: 5em auto;
-  }
+section.projects {
+  height: 100vh;
+}
 
-  .graph-wrapper {
-    margin: 0 auto;
-    width: 50%;
-  }
+section.contact {
+  height: 80vh;
+}
 
-  h3 {
-    margin: 1em;
-  }
+section.footer {
+  height: 50vh;
 }
 
 .nav-list {
   margin: 0;
+  height: 100%;
 
   li {
     display: inline-block;
@@ -97,68 +182,52 @@ h1, h2, h3, h4, h5 {
 
 button {
   border-top: none;
-  border-left: none;
+  border-left: 1px solid #001219;
   border-bottom: none;
+  border-right: 1px solid #001219;
+  border-radius: 15%;
   background-color: #f5f5f5;
   padding: 0;
   outline: none;
 
-  -webkit-transition: background-color .5s ease, color .5s ease;
-  -moz-transition: background-color .5s ease, color .5s ease;
-  -o-transition: background-color .5s ease, color .5s ease;
-  -ms-transition: background-color .5s ease, color .5s ease;
-  transition: background-color .5s ease, color .5s ease;
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
-button.nav-btn:hover {
+button.nav-btn:hover, button.nav-btn.active {
   color: #f5f5f5;
-  background-color: #7EB1DC;  
+  background-color: #7EB1DC;
 }
 
-.split {
-  padding: 4em 0 4em 0;
-  height: 10em;
+button.nav-btn::before {
+  display: none;
 }
 
-.split:hover {
-  cursor: pointer;
-  background-color: #6398AA;
+button.nav-btn::before {
+  display: inline-block;
+  content: '\f10c';
+  position: relative;
+  top: 0;
+  left: -.5em;
+  font-size: 1em;
   color: #f5f5f5;
-  border-radius: 2em;
-  -webkit-transition: color .35s, background-color .35s, border-radius .35s linear;
-  -moz-transition: color .35s, background-color .35s, border-radius .35s linear;
-  -o-transition: color .35s, background-color .35s, border-radius .35s linear;
-  -ms-transition: color .35s, background-color .35s, border-radius .35s linear;
-  transition: color .35s, background-color .35s, border-radius .35s linear;
 }
 
-.split:first-child {
-  border-right: 2px solid black;
+button.nav-btn:hover::before {
+  display: inline-block;
 }
 
-.split:last-child {
-  border-left: 2px solid black;
-}
-
-.split:nth-child(2) {
-  border-left: 2px solid black;
-  border-right: 2px solid black;
+.nav-list li:first-child button.nav-btn::before {
+  left: -.5em;
 }
 
 .image-frame {
   margin: 5px;
   border-radius: 40px;
   background-image: url("/images/AndrewThomas-Medium.jpg");
-}
-
-.headroom--pinned {
-  transition: transform .25s ease-in;
-  transform: translateY(0%);
-}
-
-.headroom--unpinned {
-  transition: transform .25s ease-in;
-  transform: translateY(-100%);
 }
 
 /* Responsive: Portrait tablets and up */
