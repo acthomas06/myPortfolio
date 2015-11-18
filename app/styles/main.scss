@@ -16,7 +16,7 @@ body {
   height: 100%;
   font-family: "FontAwesome", Trebuchet MS, Verdana, sans-serif;
   font-size: 16px;
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 h1, h2, h3, h4, h5 {
@@ -30,21 +30,20 @@ h1, h2, h3, h4, h5 {
 .bold {
   font-weight: 700;
 }
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
 
 /* Custom page header */
 section.header {
   position: fixed;
   display: block;
   height: 5em;
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 0);
   width: 100%;
+
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 
   /* Make the masthead heading the same height as the navigation */
   h3 {
@@ -58,8 +57,13 @@ section.header {
   }
 }
 
-.contact {
-  background-color: #002C3D;
+section.header.pinned {
+  background-color: rgba(255, 255, 255, 1);
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  -ms-transition: all .5s ease;
+  transition: all .5s ease;
 }
 
 .contact .col-lg-8,
@@ -132,32 +136,41 @@ section.header {
 }
 
 .projects {
-  background-color: #001219;
+  background-color: #f5f5f5;
+}
+
+.image {
+  background-image: url('/images/winter.jpg');
+  background-size: cover;
 }
 
 .about {
-  background-color: #f5f5f5;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .footer {
-  background-color: #f5f5f5;
+  background-color: rgba(153, 153, 153, 0.6);
+}
+
+.contact {
+  background-color: #e6e6e6;
+}
+
+section.image,
+section.projects {
+  height: 80vh;
 }
 
 section.about {
-  padding-top: 5em;
-  height: 80vh;
-}
-
-section.projects {
-  height: 100vh;
+  height: 70vh;
 }
 
 section.contact {
-  height: 80vh;
+  height: 50vh;
 }
 
 section.footer {
-  height: 50vh;
+  height: 10vh;
 }
 
 .nav-list {
@@ -176,17 +189,16 @@ section.footer {
   }
 
   .active {
-    background-color:#f5f5f5;
+    color:#f5f5f5;
   }
 }
 
 button {
   border-top: none;
-  border-left: 1px solid #001219;
   border-bottom: none;
+  border-left: none;
   border-right: 1px solid #001219;
-  border-radius: 15%;
-  background-color: #f5f5f5;
+  background: rgba(255, 255, 255, 0);
   padding: 0;
   outline: none;
 
@@ -199,21 +211,10 @@ button {
 
 button.nav-btn:hover, button.nav-btn.active {
   color: #f5f5f5;
-  background-color: #7EB1DC;
 }
 
 button.nav-btn::before {
   display: none;
-}
-
-button.nav-btn::before {
-  display: inline-block;
-  content: '\f10c';
-  position: relative;
-  top: 0;
-  left: -.5em;
-  font-size: 1em;
-  color: #f5f5f5;
 }
 
 button.nav-btn:hover::before {
@@ -228,23 +229,4 @@ button.nav-btn:hover::before {
   margin: 5px;
   border-radius: 40px;
   background-image: url("/images/AndrewThomas-Medium.jpg");
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
 }

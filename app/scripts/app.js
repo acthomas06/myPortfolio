@@ -32,6 +32,9 @@ angular
               templateUrl: 'views/header.html',
               controller: 'HeaderController'
             },
+            "image_view": {
+              templateUrl: 'views/image.html'
+            },
             "about_view": {
               templateUrl: 'views/about.html',
               controller: 'MainController'

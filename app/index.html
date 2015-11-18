@@ -9,7 +9,6 @@
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -21,6 +20,7 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div ui-view="header_view"></div>
+    <div ui-view="image_view"></div>
     <div ui-view="about_view"></div>
     <div ui-view="project_view"></div>
     <div ui-view="contact_view"></div>
@@ -71,6 +71,7 @@
         <script src="scripts/directives/graphexample.js"></script>
         <script src="scripts/services/anchorsmoothscroll.js"></script>
         <script src="scripts/directives/scrollclass.js"></script>
+        <script src="scripts/directives/scrollheader.js"></script>
         <!-- endbuild -->
 </body>
 </html>
