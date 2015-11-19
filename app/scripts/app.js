@@ -17,8 +17,7 @@ angular
     'ngSanitize',
     'ngTouch',
     'headroom',
-    'ui.router',
-    'sticky'
+    'ui.router'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider) {
