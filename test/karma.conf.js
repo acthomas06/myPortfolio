@@ -41,6 +41,8 @@ module.exports = function(config) {
       'bower_components/d3-tip/index.js',
       'bower_components/matchmedia/matchMedia.js',
       'bower_components/ngSticky/lib/sticky.js',
+      'bower_components/lodash/lodash.js',
+      'bower_components/restangular/dist/restangular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       "app/scripts/**/*.js",

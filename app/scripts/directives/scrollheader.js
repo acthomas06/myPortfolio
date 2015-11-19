@@ -10,7 +10,6 @@ angular.module('portfolioApp')
   .directive('scrollHeader', function ($window) {
     return function postLink(scope, element, attrs) {
         angular.element($window).bind("scroll", function () {
-        	console.log(this.pageYOffset);
         	if (this.pageYOffset >= 200) {
         		element.addClass('pinned');
         	} else {
