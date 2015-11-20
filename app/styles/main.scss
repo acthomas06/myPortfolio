@@ -1,7 +1,7 @@
-$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+//$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "font-awesome/scss/font-awesome.scss";
+@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 @font-face {
@@ -176,7 +176,7 @@ button {
   position: absolute;
   margin: 5px;
   border-radius: 50%;
-  background-image: url("/images/AndrewThomas-Medium.jpg");
+  background-image: url("../images/AndrewThomas-Medium.jpg");
 }
 
 /* All the keyframes 'vendor prefix' versions: */
