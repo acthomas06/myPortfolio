@@ -101,12 +101,14 @@ section.projects {
 section.image {
   background-image: url('../images/code-backgrnd.png');
   background-size: cover;
+  width: 100%;
 
   h3 {
+    position: relative;
     font-family: "CC Red Alert";
     font-size: 60px;
     font-weight: 300;
-    line-height: 70vh;
+    line-height: 100%;
   }
   .centered {
     text-align: center;
