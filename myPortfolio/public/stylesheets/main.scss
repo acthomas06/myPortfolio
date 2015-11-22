@@ -1,4 +1,8 @@
+<<<<<<< HEAD:myPortfolio/public/stylesheets/main.scss
 $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+=======
+//$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+>>>>>>> 37219cb45159decd977e0d2a18bc31cb034ed098:app/styles/main.scss
 // bower:scss
 @import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 @import "../../bower_components/font-awesome/scss/font-awesome.scss";
@@ -176,7 +180,7 @@ button {
   position: absolute;
   margin: 5px;
   border-radius: 50%;
-  background-image: url("/images/AndrewThomas-Medium.jpg");
+  background-image: url("../images/AndrewThomas-Medium.jpg");
 }
 
 /* All the keyframes 'vendor prefix' versions: */

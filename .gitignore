@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /node_modules
 /dist
 /.tmp
@@ -5,3 +6,13 @@
 /bower_components
 /myPortfolio/node_modules
 /myPortfolio/bower_components
+=======
+node_modules
+public
+.tmp
+.sass-cache
+.idea
+client/bower_components
+/server/config/local.env.js
+npm-debug.log
+>>>>>>> 37219cb45159decd977e0d2a18bc31cb034ed098
