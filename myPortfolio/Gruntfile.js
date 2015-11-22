@@ -481,7 +481,6 @@ module.exports = function (grunt) {
       'wiredep',
       'concurrent:server',
       'postcss:server',
-      'sass',
       'connect:livereload',
       'watch'
     ]);
@@ -497,7 +496,6 @@ module.exports = function (grunt) {
     'wiredep',
     'concurrent:test',
     'postcss',
-    'sass',
     'connect:test',
     'karma'
   ]);
@@ -508,7 +506,6 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'postcss',
-    'sass',
     'ngtemplates',
     'concat',
     'ngAnnotate',
