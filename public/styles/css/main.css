@@ -7857,6 +7857,8 @@ section.header {
       -o-transition: all .3s ease-in-out;
       -ms-transition: all .3s ease-in-out;
       transition: all .3s ease-in-out; }
+  section.header .logo:hover {
+    cursor: pointer; }
   section.header .pull-right {
     float: right; }
   section.header .nav-btn:hover {

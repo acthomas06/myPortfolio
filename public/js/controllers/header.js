@@ -16,7 +16,7 @@ angular.module('portfolioApp')
 
       this.menuItems = ['about', 'projects', 'contact'];
 
-      $scope.gotoElement = function (eID){
+      $scope.gotoElement = function (eID) {
         // set the location.hash to the id of
         // the element you wish to scroll to.
         $location.hash(eID);
