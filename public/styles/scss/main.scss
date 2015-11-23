@@ -1,22 +1,22 @@
-$icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+$icon-font-path: "../../../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+@import "../../../bower_components/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import "../../../bower_components/font-awesome/scss/font-awesome.scss";
 // endbower
 
 @font-face {
   font-family: "CC Red Alert";
-  src: url('fonts/CC_Red-Alert.ttf');
+  src: url('../fonts/CC_Red-Alert.ttf');
 }
 
 @font-face {
   font-family: "Roboto-Thin";
-  src: url('fonts/Roboto-Thin.ttf');
+  src: url('../fonts/Roboto-Thin.ttf');
 }
 
 @font-face {
   font-family: "Lobster";
-  src: url('fonts/Lobster.otf');
+  src: url('../fonts/Lobster.otf');
 }
 
 body {
@@ -38,11 +38,11 @@ section.header {
   background-color: rgba(0, 0, 0, .5);
   width: 100%;
 
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  -ms-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+  -webkit-transition: all .3s ease-in-out;
+  -moz-transition: all .3s ease-in-out;
+  -o-transition: all .3s ease-in-out;
+  -ms-transition: all .3s ease-in-out;
+  transition: all .3s ease-in-out;
 
   .logo {
     height: 100%;
@@ -52,8 +52,18 @@ section.header {
 
     h3 {
       font-family: "Lobster";
+      background-color: #ffffff;
+      border-radius: 8px;
+      border: 2px solid #ff9900;
+      padding: 0px 12px 0px 3px;
       font-size: 48px;
       color: #ff9900;
+
+      -webkit-transition: all .3s ease-in-out;
+      -moz-transition: all .3s ease-in-out;
+      -o-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+      transition: all .3s ease-in-out;
     }
   }
 
@@ -70,11 +80,6 @@ section.header {
 
 section.header.pinned {
   background-color: rgba(255, 153, 0, 1);
-  -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
-  -ms-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
 
   .nav-btn, h3 {
     color: #4d4d4d;
@@ -89,6 +94,8 @@ section.header.pinned {
   }
 
   h3 {
+    background-color: #ff9900;
+    border: 2px solid #ffffff;
     color: #ffffff;
   }
 }
@@ -99,23 +106,27 @@ section.projects {
 }
 
 section.image {
-  background-image: url('../images/code-backgrnd.png');
+  background-image: url('../../images/code-backgrnd.png');
   background-size: cover;
   width: 100%;
 
-  h3 {
-    position: relative;
-    font-family: "CC Red Alert";
-    font-size: 60px;
-    font-weight: 300;
-    line-height: 100%;
-  }
-  .centered {
-    text-align: center;
-  }
+  .container-fluid {
+    height: 100%;
 
-  .orange {
-    color: #ff9900;
+    h3 {
+      position: relative;
+      font-family: "CC Red Alert";
+      font-size: 60px;
+      font-weight: 300;
+      line-height: 100%;
+    }
+    .centered {
+      text-align: center;
+    }
+
+    .orange {
+      color: #ff9900;
+    }
   }
 }
 

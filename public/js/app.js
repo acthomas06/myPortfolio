@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc overview
  * @name portfolioApp
@@ -21,6 +19,8 @@ angular
   ])
   .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider) {
+      'use strict';
+
       $urlRouterProvider.otherwise('/');
 
       //$locationProvider.html5Mode(true);
