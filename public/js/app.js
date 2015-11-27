@@ -15,7 +15,8 @@ angular
     'ngSanitize',
     'ngTouch',
     'headroom',
-    'ui.router'
+    'ui.router',
+    'firebase'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider) {
