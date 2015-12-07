@@ -10,7 +10,6 @@ angular.module('portfolioApp')
   .directive('scrollClass', function ($window) {
     return function () {
         angular.element($window).bind("scroll", function() {
-          console.log(this.pageYOffset);
           if (this.pageYOffset >= 460 && this.pageYOffset < 940) {
             $('.nav-list li:first-child .nav-btn').addClass('active');
           } else {

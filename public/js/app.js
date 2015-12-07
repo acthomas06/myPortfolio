@@ -1,5 +1,3 @@
-'use strict';
-
 /**
  * @ngdoc overview
  * @name portfolioApp
@@ -17,10 +15,13 @@ angular
     'ngSanitize',
     'ngTouch',
     'headroom',
-    'ui.router'
+    'ui.router',
+    'firebase'
   ])
   .config(['$stateProvider', '$urlRouterProvider',
     function ($stateProvider, $urlRouterProvider, $locationProvider) {
+      'use strict';
+
       $urlRouterProvider.otherwise('/');
 
       //$locationProvider.html5Mode(true);

@@ -1,7 +1,7 @@
 <section ng-controller="HeaderController as header">
-  <section class="header" scroll-header>
-    <div class="logo pull-left">
-      <h3>a-thom</h3>
+  <section class="header" scroll-header id="header">
+    <div class="logo pull-left" ng-click="gotoElement('header')">
+      <h3>aT</h3>
     </div>
     <ul class="nav-list pull-right">
       <li ng-repeat="menuItem in header.menuItems" scroll-class>
