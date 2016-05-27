@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "sourceMap": false,
+    "rootDir": "."
+  },
+  "compileOnSave": false,
+  "files": [
+    "./typings/browser.d.ts",
+    "./typings/browser/ambient/es6-shim/index.d.ts",
+    "./app/src/app.component.ts"
+  ],
+  "atom": {
+    "rewriteTsconfig": true
+  }
+}
