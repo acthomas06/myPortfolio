@@ -7,8 +7,8 @@ var helpers = require('./helpers');
 module.exports = {
   entry: {
       'bundle': './app/main.ts',
-      'vendor.js': './app/vendor.ts',
-      'polyfills.js': './app/polyfills.ts'
+      'vendor': './app/vendor.ts',
+      'polyfills': './app/polyfills.ts'
   },  
   resolve: {
     extensions: ['', '.js', '.ts', '.less', '.png', '.jpg', '.svg', '.woff', '.ttf']
