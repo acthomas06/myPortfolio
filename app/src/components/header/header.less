@@ -1,22 +1,14 @@
 @color-transparent: rgba(0, 0, 0, .5);
 
-@font-face {
-    font-family: 'Roboto Thin';
-    src: url('app/src/fonts/Roboto-Thin.ttf');
-}
-
-.container {
-    margin: 0px;
-}
-
-.header {
+.top-nav {
     box-sizing: border-box;
-    font-family: Roboto Thin;
     font-size: 16px;
     width: 100%;
-    height: 75px;
-    background: @color-transparent;
+    height: 60px;
+    background-color: #353535;
+    display: block;
     position: fixed;
+    z-index: 10;
     
     .logo {
         &.pull-left {
@@ -34,24 +26,31 @@
     .list-container {
         display: inline-block;
         float: right;
-        height: 75px;
+        height: 55px;
         cursor: pointer;
         
         .header-list {
             height: 100%;   
             margin: 0;
-            line-height: 70px; 
+            line-height: 55px; 
         }
         
         li {
+            margin-right: 32px;
             list-style-type: none;
             display: inline-block;
-            padding-right: 16px;
             border-bottom: 5px solid transparent;
             transition: all .25s;
-            
+
+            a {
+                display: inline-block;
+                line-height: 55px;
+                text-decoration: none;
+                color: #F4F4F4;
+            }
+
             &:hover {
-                border-bottom: 5px solid #FFFFFF;             
+                border-bottom: 5px solid #FFFFFF;                 
             }            
         }
                 

@@ -1,14 +1,12 @@
-<div class="container">
-    <div class="header">
-        <div class="logo-container">
-            <img src=""/>
-        </div>
-        <div class="list-container">
-            <ul class="header-list">
-                <li><span>About</span></li>
-                <li><span>Projects</span></li>
-                <li><span>Contact</span></li>
-            </ul>
-        </div>
+<nav class="top-nav">
+    <div class="logo-container">
+        <img src=""/>
     </div>
-</div>
+    <div class="list-container">
+        <ul class="header-list">
+            <li [ngClass]="{active: isActive}" *ngFor="let item of navItems">
+                <a href="#{{item | lowercase}}">{{item}}</a>
+            </li>
+        </ul>
+    </div>
+</nav>

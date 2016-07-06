@@ -1,10 +1,16 @@
 import { enableProdMode } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 
+import { bootstrap } from '@angular/platform-browser-dynamic';
+import { APP_ROUTER_PROVIDERS } from './src/app.routes';
 import { AppComponent } from './src/app.component';
 
-// enableProdMode();
+import './src/img/images';
+import './src/fonts/Roboto-Thin.ttf';
 
-bootstrap(AppComponent)
-    .then(success => console.log(`Bootstrap success`))
+if (process.env.ENV === 'production') {
+    enableProdMode();
+}
+
+bootstrap(AppComponent, [])
     .catch(error => console.log(error));

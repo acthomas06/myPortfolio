@@ -1,0 +1,67 @@
+
+.footer-container {
+    height: 70px;
+    width: 100%;
+    margin: 0px auto;
+    bottom: 0px;
+    font-size: 12px;
+    color: #FFFFFF;
+    display: inline-block;
+
+    .footer {
+        height: 100%;
+        position: relative;
+        background-color: #353535;
+        line-height: 70px;
+        padding: 16px;
+    }
+
+    .fl-l {
+        float: left;
+    }
+
+    .fl-r {
+        float: right;
+    }
+
+    .tile-list {
+        display: inline-block;
+        margin: 0 16px 0 0;
+        line-height: 70px;
+        li {
+            list-style-type: none;
+            display: inline-block;
+        }
+    }
+
+    .fa-twitter-square,
+    .fa-facebook-official,
+    .fa-linkedin-square {
+        line-height: 70px;
+        margin-left: 8px; 
+
+        &:hover {
+            opacity: .6;
+        }
+        transition: all .25s;
+    }
+
+    .fa-twitter-square {
+        &:before {
+            color: #55acee;
+        }
+    }
+
+    .fa-linkedin-square {
+        &:before {
+            color: #0077B5;
+        }
+    }
+
+    .fa-facebook-official {
+        &:before {
+            color: #3b5998;
+        }
+    }
+}
+
