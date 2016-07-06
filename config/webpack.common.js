@@ -28,7 +28,7 @@ module.exports = {
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: ['bundle', 'vendor', 'polyfills']
-    }),
+    }, Infinity),
 
     new HtmlWebpackPlugin({
       template: 'index.html'
