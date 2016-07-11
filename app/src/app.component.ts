@@ -19,13 +19,7 @@ import { TitleComponent } from './components/title/title.component';
                  ContactComponent,
                  TitleComponent],
     styles: [String(require('./app.less'))],
-    providers: [HTTP_PROVIDERS],
-    precompile: [HeaderComponent,
-                 FooterComponent,
-                 ProjectsComponent,
-                 AboutComponent,
-                 ContactComponent,
-                 TitleComponent]
+    providers: [HTTP_PROVIDERS]
 })
 
 export class AppComponent {
