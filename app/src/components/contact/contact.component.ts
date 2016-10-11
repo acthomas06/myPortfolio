@@ -3,8 +3,8 @@ import { Component,
 
 @Component({
     selector: 'contact',
-    templateUrl: 'app/src/components/contact/contact.template.html',
-    styles: [String(require('./contact.less')), String(require('../content.less'))]
+    template: require('./contact.template.html'),
+    styles: [require('./contact.less'), require('../content.less')]
 })
 
 export class ContactComponent implements OnInit {

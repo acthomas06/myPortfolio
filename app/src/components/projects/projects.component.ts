@@ -3,8 +3,8 @@ import { Component,
 
 @Component({
     selector: 'projects',
-    templateUrl: 'app/src/components/projects/projects.template.html',
-    styles: [String(require('./projects.less')), String(require('../content.less'))]
+    template: require('./projects.template.html'),
+    styles: [require('./projects.less'), require('../content.less')]
 })
 
 export class ProjectsComponent implements OnInit {

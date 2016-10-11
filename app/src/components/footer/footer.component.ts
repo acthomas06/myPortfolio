@@ -3,8 +3,8 @@ import { Component,
 
 @Component({
     selector: 'footer-component',
-    templateUrl: 'app/src/components/footer/footer.template.html',
-    styles: [String(require('./footer.less'))]
+    template: require('./footer.template.html'),
+    styles: [require('./footer.less')]
 })
 export class FooterComponent implements OnInit {
     constructor() { }
