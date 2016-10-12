@@ -4,7 +4,7 @@ import { Component,
 @Component({
     selector: 'contact',
     template: require('./contact.template.html'),
-    styles: [require('./contact.less'), require('../content.less')]
+    styles: [require('./contact.css'), require('../content.css')]
 })
 
 export class ContactComponent implements OnInit {

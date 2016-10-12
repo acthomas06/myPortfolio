@@ -4,7 +4,7 @@ import { Component,
 @Component({
     selector: 'footer-component',
     template: require('./footer.template.html'),
-    styles: [require('./footer.less')]
+    styles: [require('./footer.css')]
 })
 export class FooterComponent implements OnInit {
     constructor() { }

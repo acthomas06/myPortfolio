@@ -4,7 +4,7 @@ import { Component,
 @Component({
     selector: 'projects',
     template: require('./projects.template.html'),
-    styles: [require('./projects.less'), require('../content.less')]
+    styles: [require('./projects.css'), require('../content.css')]
 })
 
 export class ProjectsComponent implements OnInit {

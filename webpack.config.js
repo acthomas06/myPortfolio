@@ -15,7 +15,7 @@ var commonConfig = {
       // TypeScript
       { test: /\.ts$/, loaders: ['ts-loader', 'angular2-template-loader'], exclude: 'node_modules'},
       { test: /\.html$/, loader: 'raw-loader', exclude: 'node_modules' },
-      { test: /\.less$/, loader: 'raw-loader', exclude: 'node_modules' },
+      { test: /\.css$/, loader: 'raw-loader', exclude: 'node_modules' },
       { test: /\.json$/, loader: 'file?name=[name].[ext]', exclude: 'node_modules' },
       { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file?name=assets/[name].[ext]', exclude: 'node_modules' },
       { test: /\.(woff|woff2|ttf|eot|otf)$/, loader: 'file?name=fonts/[name].[ext]', exclude: 'node_modules' }

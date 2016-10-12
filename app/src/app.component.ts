@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
     selector: 'app-component',
     template: require('./app.template.html'),
-    styles: [require('./app.less')]
+    styles: [require('./app.css')]
 })
 
 export class AppComponent {
