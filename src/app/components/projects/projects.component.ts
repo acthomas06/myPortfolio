@@ -8,8 +8,8 @@ import { Component,
 })
 
 export class ProjectsComponent implements OnInit {
-    experience:Array<string> = ["Projects", "Experience", "Technologies"];
-    selectedCategory:string = 'Projects';
+    experience:Array<string> = ["PROJECTS", "EXPERIENCE", "TECHNOLOGIES"];
+    selectedCategory:string = 'PROJECTS';
 
     technologyImages:Array<Object> = [
         {name: "angular_shield"}, 
@@ -25,7 +25,12 @@ export class ProjectsComponent implements OnInit {
     projectImages:Array<Object> = [
         {url: "persogenics_dashboard"},
         {url: "persogenics_employee_list"},
-        {url: "persogenics_account_profile"}
+        {url: "persogenics_account_profile"},
+        {url: "navigation_hamburger_expanded"},
+        {url: "navigation_meganav_closed"},
+        {url: "navigation_meganav_expanded"},
+        {url: "navigation_megatilenav_closed"},
+        {url: "navigation_megatilenav_expanded"}
     ];
 
     experienceImages:Array<Object> = [
