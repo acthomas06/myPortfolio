@@ -3,12 +3,6 @@
   "version": "1.0.0",
   "description": "Andrew Thomas' Portfolio",
   "main": "./app/client.ts",
-  "scripts": {
-    "start": "npm run server",
-    "server": "nodemon dist/server/index.js",
-    "test": "karma start",
-    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acthomas06/myPortfolio.git"
@@ -19,6 +13,20 @@
     "url": "https://github.com/acthomas06/myPortfolio/issues"
   },
   "homepage": "https://github.com/acthomas06/myPortfolio#readme",
+  "scripts": {
+    "watch": "webpack --watch",
+    "prebuild": "rimraf dist",
+    "build": "webpack",
+    "build:prod": "webpack --progress -p",
+    "prestart": "npm run build",
+    "server": "nodemon dist/server/index.js",
+    "debug:server": "node-nightly --inspect --debug-brk dist/server/index.js",
+    "start": "npm run server",
+    "debug:start": "npm run build && npm run debug:server",
+    "predebug": "npm run build",
+    "debug:build": "node-nightly --inspect --debug-brk node_modules/webpack/bin/webpack.js",
+    "debug": "node --debug-brk dist/server/index.js"
+  },
   "dependencies": {
     "@angular/common": "2.1.0",
     "@angular/compiler": "2.1.0",
@@ -65,7 +73,7 @@
     "url-loader": "^0.5.7",
     "webpack": "2.1.0-beta.25",
     "webpack-dev-middleware": "^1.6.1",
-    "webpack-dev-server": "^2.1.0-beta.9",
+    "webpack-dev-server": "2.1.0-beta.9",
     "webpack-merge": "^0.13.0"
   }
 }

@@ -8,9 +8,8 @@
     "outDir": "dist",
     "sourceMap": true,
     "sourceRoot": "src",
-    "target": "es6",
+    "target": "es5",
     "lib": ["es6", "dom"],
-    "noEmitOnError": true,
     "types": [
       "body-parser",
       "compression",
