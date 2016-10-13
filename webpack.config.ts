@@ -17,7 +17,7 @@ var commonConfig = {
       { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.css$/, loader: 'raw-loader' },
       { test: /\.json$/, loader: 'json-loader'},
-      { test: /\.(jpe?g|png|gif|svg)$/i, loader: 'file?name=assets/[name].[ext]'},
+      { test: /\.(jpe?g|png|gif|svg|ico)$/i, loader: 'file?name=assets/[name].[ext]'},
       { test: /\.(woff|woff2|ttf|eot|otf)$/, loader: 'file?name=fonts/[name].[ext]'}
     ],
   },
