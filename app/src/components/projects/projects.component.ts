@@ -10,6 +10,7 @@ import { Component,
 export class ProjectsComponent implements OnInit {
     experience:Array<string> = ["Projects", "Experience", "Technologies"];
     selectedCategory:string = 'Projects';
+
     technologyImages:Array<Object> = [
         {name: "angular_shield"}, 
         {name: "es6_logo"}, 
@@ -19,7 +20,8 @@ export class ProjectsComponent implements OnInit {
         {name: "css_shield"},
         {name: "nodejs_logo"},
         {name: "MySQL"},         
-        ];
+    ];
+
     projectImages:Array<Object> = [
         {url: "persogenics_dashboard"},
         {url: "persogenics_employee_list"},
@@ -35,9 +37,10 @@ export class ProjectsComponent implements OnInit {
 
     constructor() { }
 
-    ngOnInit() { }
+    ngOnInit() {  }
 
-    selectCategory(item:string) {
-        this.selectedCategory = item;
+    selectCategory(item: string) {
+        console.log("HELLO");
+        // this.selectedCategory = item;
     }
 }

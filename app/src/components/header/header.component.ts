@@ -4,7 +4,7 @@ import { Component,
 @Component({
     selector: 'header-component',
     template: require('./header.template.html'),
-    styles: [require('./header.css')]
+    styles: [require('./header.css'), require('../content.css')]
 })
 export class HeaderComponent implements OnInit {
     navItems:Array<string> = ["About", "Projects", "Contact"];

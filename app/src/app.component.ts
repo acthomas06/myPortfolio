@@ -1,3 +1,4 @@
+require ('./fonts/Roboto-Thin.ttf');
 import { Component } from '@angular/core';
 
 @Component({
