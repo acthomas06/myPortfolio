@@ -1,22 +1,7 @@
-<div id="projects" class="container">
-    <div class="content">
-        <button *ngFor="let item of experience" class="button-item" [class.active]="item == selectedCategory" (click)="selectCategory(item)">
-            {{item}}
-        </button>
-        <div *ngIf="selectedCategory == 'PROJECTS'" class="project-container">
-            <div class="image-tile" *ngFor="let image of projectImages">
-                <img class="project" alt="{{image.name}}" height="135px" width="240px" src="./assets/{{image.url}}.png"/>
-            </div>
-        </div>
-        <div *ngIf="selectedCategory == 'EXPERIENCE'" class="experience-container">
-            <div class="image-tile stacked" *ngFor="let image of experienceImages">
-                <img alt="{{image.name}}" height="{{image.height}}" width="200px" src="./assets/{{image.name}}.png"/>
-            </div>
-        </div>
-        <div *ngIf="selectedCategory == 'TECHNOLOGIES'" class="technologies-container">
-            <div class="image-tile spread" *ngFor="let image of technologyImages">
-                <img alt="{{image.name}}" height="130px" width="150px" src="./assets/{{image.name}}.png"/>
-            </div>
-        </div>
+<div class="image-tile" *ngFor="let image of portfolioImages">
+    <div class="image-container" [preview]="image.url">
+        <img class="project" alt="{{image.name}}" height="135px" width="240px" src="./assets/{{image.url}}.png"/>
+        <img class="magnifier" src="./assets/magnifier.svg"/>
+        <img class="company" src="./assets/{{image.name}}.png" height="16px" width="65px"/>
     </div>
 </div>

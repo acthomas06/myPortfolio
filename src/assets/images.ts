@@ -24,6 +24,14 @@ import './insidesales_logo.png';
 import './persogenics_logo.png';
 import './workfront_logo.png';
 import './devmountain_logo.png';
+import './tutapp_logo.png';
 
 //Misc images
 import './favicon.ico';
+import './donut_care.jpg';
+
+//SVG images
+import './facebook.svg';
+import './linkedin.svg';
+import './twitter.svg';
+import './youtube.svg';

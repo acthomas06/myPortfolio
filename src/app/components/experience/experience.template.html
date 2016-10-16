@@ -1,0 +1,5 @@
+<div class="image-tile stacked" *ngFor="let image of experienceImages">
+    <a href="{{image.url}}" target="_blank">
+        <img class="experience" alt="{{image.name}}" height="{{image.height}}" width="200px" src="./assets/{{image.name}}.png"/>
+    </a>
+</div>

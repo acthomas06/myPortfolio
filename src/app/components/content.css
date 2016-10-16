@@ -3,21 +3,49 @@
     src: url('../fonts/Roboto-Thin.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../fonts/RobotoCondensed-Regular.ttf') format('truetype');
+}
+
  * {
      font-family: 'Roboto Thin';
  }
 
+ h1 {
+     font-family: 'Roboto Condensed';
+     font-weight: 300;
+     font-size: 140px;
+ }
+
 .container {
-    height: 600px;
+    height: 500px;
     width: 100%;
     margin: 0 auto;
     position: relative;
-    display: block;
+    display: inline-block;
     border-bottom: 1px solid #e5e5e5;
 }
 
 .content {
-    padding-top: 76px;
+    margin: 5% auto;
     text-align: center;
-    margin: 0 auto;
+}
+
+.image-tile {
+    vertical-align: middle;
+    position: relative;
+    display: table-cell;
+    height: 125px;
+    width: 250px; 
+    margin: 16px;
+    padding: 4px;
+}
+
+.carousel-container {
+    position: relative;
+    background: #F0F0F0;
+    min-height: 200px;
+    height: 200px;
+    margin: 32px 100px;
 }

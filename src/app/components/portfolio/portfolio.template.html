@@ -1,0 +1,11 @@
+<div id="portfolio" class="portfolio-container container">
+    <div class="content">
+        <button type="button"
+        class="button-item" 
+        *ngFor="let item of portfolio"
+        [class.active]="item == selectedCategory" (click)="selectCategory(item)">
+            {{item | uppercase}}
+        </button>
+        <carousel></carousel>
+    </div>
+</div>

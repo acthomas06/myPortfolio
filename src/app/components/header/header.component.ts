@@ -7,7 +7,7 @@ import { Component,
     styles: [require('./header.css'), require('../content.css')]
 })
 export class HeaderComponent implements OnInit {
-    navItems:Array<string> = ["About", "Projects", "Contact"];
+    navItems:Array<string> = ["ABOUT", "PORTFOLIO", "CONTACT"];
 
     constructor() { }
 

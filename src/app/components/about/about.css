@@ -1,3 +1,18 @@
-.container {
-    background: rgba(81, 179, 181, .5);
+.content {
+    margin: 15% auto !important;
+    text-align: center;
+    position: relative;
+    -webkit-filter: brightness(60%);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translate3d(0,0,0);
+    transition: opacity .3s ease-in;
+}
+
+.parallax-section {
+    position : relative;
+    height : 80vh;
+    background-repeat     : no-repeat;
+    background-attachment : fixed;
+    background-position   : 100% auto;
+    background-size       : cover;
 }

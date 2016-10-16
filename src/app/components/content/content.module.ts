@@ -1,17 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CONTENT_ROUTE } from './content.route';
+
+import { AboutModule } from '../about/about.module';
+import { PortfolioModule } from '../portfolio/portfolio.module';
 
 import { ContentComponent }   from './content.component';
 import { ContactComponent } from '../contact/contact.component';
-import { AboutComponent } from '../about/about.component';
-import { ProjectsComponent } from '../projects/projects.component';
 import { TitleComponent } from '../title/title.component';
 
+import { TypewriteDirective } from '../../directives/typewrite.directive';
+
 @NgModule({
-    imports: [BrowserModule, CONTENT_ROUTE],
-    exports: [ContentComponent, AboutComponent, ProjectsComponent, ContactComponent, TitleComponent],
-    declarations: [ContentComponent, AboutComponent, ProjectsComponent, ContactComponent, TitleComponent],
+    imports: [BrowserModule, AboutModule, PortfolioModule],
+    exports: [ContentComponent, ContactComponent, TitleComponent],
+    declarations: [ContentComponent, ContactComponent, TitleComponent],
     providers: [],
 })
 export class ContentModule { }

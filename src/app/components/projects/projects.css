@@ -1,73 +1,64 @@
-* {
-    font-family: 'Roboto Thin';
-}
-
-.button-item {
-    color: #000000;
-    padding: 8px 16px 8px 16px;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    background: rgba(158, 158, 158, .3);
-    box-shadow: 0px 2px 5px 0 rgba(0, 0, 0, .25);
-    font-size: 16px;
-    margin-right: 24px;
+img.project {
+    padding: 4px;
+    border: 1px solid #FFFFFF;
+    border-radius: 4px;
+    max-width: 100%;
+    min-width: 250px;
+    -webkit-filter: brightness(100%);
     cursor: pointer;
+
     transition: all .2s;
 }
 
-.button-item:focus {
-    outline: none;
-}
-
-.button-item:hover {
-    box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, .25);
-    transform: translate3d(0, -1px, 0);
-    background: rgba(158, 158, 158, .185);
-}
-
-.button-item.active {
-    color: #FFFFFF;
-    border: 1px solid transparent;
-    background: #ef5350;
-    transition: all .2s;
-}
-
-.button-item.active:hover {
-    transform: translate3d(0, -1px, 0);
-    background: #d32f2f;
-}
-
-.project-container {
-    margin: 32px 100px;
-}
-
-.technologies-container {
-    margin: 32px 100px;
-}
-
-.experience-container {
-    margin: 60px 100px;
-}
-
-.image-tile {
-    vertical-align: top;
-    position: relative;
-    display: inline-block;
-    height: 200px;
-    width: 250px; 
-}
-
-.image-tile > .project {
+img.magnifier {
     position: absolute;
-    top: 30px;
-    left: 5px;
+    top: 45%;
+    left: 45%;
+    height: 20px;
+    width: 20px;
+    opacity: 0;
 }
 
-/*.image-tile.stacked {
-    display: block;
-    margin-top: 56px;
-}*/
+img.company {
+    position: absolute;
+    top: 142px;
+    right: 20px;
+    opacity: 0;
+}
 
-.image-tile.spread {
-    margin: 20px;
+.image-container:hover > img.project {
+    -webkit-filter: brightness(60%);
+}
+
+.image-container:hover > img.magnifier,
+.image-container:hover > img.company {
+    opacity: 1;
+    -webkit-filter: brightness(90%);
+}
+
+.preview-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .75);
+    height: 100vh;
+    width: 100%;
+    z-index: 13;
+}
+
+.preview-container {
+    position: fixed;
+    top: 0;
+    left: 7%;
+    height: 85%;
+    min-height: 520px;
+    width: 85%;
+    background-color: #F0F0F0;
+    z-index: 14;
+    margin: 4.5% auto;
+}
+
+.preview-image {
+    height: 100%;
+    width: 100%;
 }

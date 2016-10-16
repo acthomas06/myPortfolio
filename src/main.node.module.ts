@@ -14,6 +14,8 @@ import { HeaderModule } from './app/components/header/header.module';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { APP_ROUTER_PROVIDERS } from './app/app.routes';
 
+import { TypewriteDirective } from './app/directives/typewrite.directive';
+
 @NgModule({
     imports: [
         BrowserModule,

@@ -1,6 +1,6 @@
 .top-nav {
     box-sizing: border-box;
-    font-size: 16px;
+    font-size: 14px;
     width: 100%;
     height: 60px;
     background-color: #353535;
@@ -27,7 +27,7 @@
 }
 
 li {
-    margin-right: 32px;
+    padding: 0 24px;
     list-style-type: none;
     display: inline-block;
     border-bottom: 5px solid transparent;
@@ -35,7 +35,7 @@ li {
 }
 
 li:hover {
-    border-bottom: 5px solid #FFFFFF;                 
+    border-bottom: 5px solid #ef5350;                 
 }
 
 a {

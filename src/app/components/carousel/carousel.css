@@ -1,0 +1,21 @@
+.arrow-container {
+    background-color: #F0F0F0;
+    width: 5%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.arrow-container.left {
+    left: 0;
+}
+
+.arrow-container.right {
+    right: 0;
+}
+
+.carousel-inner.container {
+    overflow-x: scroll;
+    height: 100%;
+}
