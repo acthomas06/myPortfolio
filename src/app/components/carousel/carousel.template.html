@@ -1,7 +1,8 @@
 <div class="carousel-container">
-    <div class="left arrow-container"></div>
+    <scrollBtnLeft (canAnimateLeft)="leftAnimate($event)"></scrollBtnLeft>
     <div class="container carousel-inner">
-        <div class="tile-container">
+        <!--TODO: Animations-->
+        <div class="tile-container" style="margin-left: 0%">
             <div *ngIf="getSelectedPortfolioItem() == 'projects'">
                 <projects></projects>
             </div>
@@ -13,5 +14,5 @@
             </div>
         </div>
     </div>
-    <div class="right arrow-container"></div>
+    <scrollBtnRight (canAnimateRight)="rightAnimate($event)"></scrollBtnRight>
 </div>

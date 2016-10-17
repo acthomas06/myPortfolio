@@ -2,24 +2,10 @@
     max-width: 200%;
     width: 100%;
     display: inline-block;
-    margin: 2% auto;
-}
-
-.arrow-container {
-    background-color: #F0F0F0;
-    width: 5%;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    z-index: 1;
-}
-
-.arrow-container.left {
-    left: -5%;
-}
-
-.arrow-container.right {
-    right: -5%;
+    margin-left: 100px;
+    margin-right: 0px;
+    margin-top: 2%;
+    margin-bottom: 2%;
 }
 
 .carousel-container {
@@ -31,6 +17,6 @@
 }
 
 .carousel-inner.container {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    height: 100%;
+    overflow: hidden;
 }

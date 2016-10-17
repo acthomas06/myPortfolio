@@ -1,0 +1,58 @@
+.arrow-container {
+    background-color: #F0F0F0;
+    width: 5%;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 1;
+}
+
+.arrow-container.left {
+    left: -5%;
+}
+
+.arrow-container.right {
+    right: -5%;
+}
+
+.left-arrow,
+.right-arrow {
+    position: absolute;
+    top: 30%;
+    height: 24px;
+    width: 24px;
+}
+
+.left-arrow {
+    left: 5%;
+}
+
+.right-arrow {
+    right: 5%;
+}
+
+.arrow-box {
+    height: 60px;
+    width: 40px;
+    position: absolute;
+    top: 35%;
+    cursor: pointer;
+
+    border: 1px solid #F0F0F0;
+    background-color: #FFFFFF;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, .1);
+    z-index: 1;
+    display: none;
+}
+
+.arrow-box:hover {
+    background-color: rbga(0, 0, 0, .2);
+}
+
+.arrow-box.left {
+    left: -20%;
+}
+
+.arrow-box.right {
+    right: -20%;
+}
