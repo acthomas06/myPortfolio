@@ -16,6 +16,8 @@ export class TypewriteDirective {
         this.render = renderer;
     }
 
+    @Output() animationFinished = new EventEmitter();
+
     @Input('typewrite') myTypewrite: string;
 
     @HostListener('window:load', ['$event']) 
@@ -30,6 +32,10 @@ export class TypewriteDirective {
             setTimeout(() => {
                 this.typeWrite(text, i);
             }, 200);
+        }
+        
+        if (text == this.el.nativeElement.innerHTML) {
+            this.animationFinished.emit(true);
         }
     }
 }

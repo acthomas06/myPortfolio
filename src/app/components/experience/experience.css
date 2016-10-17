@@ -1,3 +1,13 @@
-.image-tile.stacked > a > img {
+.image-tile {
     vertical-align: middle;
+    position: relative;
+    display: table-cell;
+    height: 125px;
+    width: 250px; 
+    margin: 16px;
+    padding: 4px;
+}
+
+img.experience {
+    margin: auto 24px;
 }

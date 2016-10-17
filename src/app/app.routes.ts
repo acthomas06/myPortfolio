@@ -9,12 +9,8 @@ import { ExperienceComponent } from './components/experience/experience.componen
 import { TechnologiesComponent } from './components/technologies/technologies.component';
 
 const routes: Routes = [
-    {path: '', redirectTo: 'home/projects', pathMatch: 'full'},
-    {path: 'home', component: ContentComponent, children: [
-        {path: 'projects', component: ProjectsComponent},
-        {path: 'experience', component: ExperienceComponent},
-        {path: 'technologies', component: TechnologiesComponent}
-    ]}
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
+    {path: 'home', component: ContentComponent}    
 ];
 
 export const APP_ROUTER_PROVIDERS: ModuleWithProviders = RouterModule.forRoot(routes);

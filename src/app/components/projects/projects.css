@@ -1,3 +1,13 @@
+.image-tile {
+    vertical-align: middle;
+    position: relative;
+    display: table-cell;
+    height: 125px;
+    width: 250px; 
+    margin: 16px;
+    padding: 4px;
+}
+
 img.project {
     padding: 4px;
     border: 1px solid #FFFFFF;
@@ -21,7 +31,7 @@ img.magnifier {
 
 img.company {
     position: absolute;
-    top: 142px;
+    top: 125px;
     right: 20px;
     opacity: 0;
 }

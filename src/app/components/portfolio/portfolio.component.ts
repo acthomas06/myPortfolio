@@ -1,6 +1,9 @@
 import { Component, 
          OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, 
+         ActivatedRoute } from '@angular/router';
+
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
     selector: 'portfolio',
@@ -9,27 +12,26 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 
 export class PortfolioComponent implements OnInit {
-    portfolio:Array<string> = ["projects", "experience", "technologies"];
-    selectedCategory:string;
     router: Router;
     route: ActivatedRoute;
-    constructor(router: Router, route: ActivatedRoute) {
+    portfolioService: PortfolioService;
+
+    selectedCategory: string = 'projects';
+    portfolio:Array<string> = ["projects", "experience", "technologies"];
+
+    constructor(router: Router, route: ActivatedRoute, portfolioService: PortfolioService) {
         this.router = router;
         this.route = route;
+        this.portfolioService = portfolioService;
      }
 
-    ngOnInit() {
-        this.route.params.subscribe((param) => console.log(param));
-        // console.log(this.route.params);
-      }
+    ngOnInit() {}
 
     selectCategory(item: string) {
         this.selectedCategory = item;
         
-        this.router.navigate(['/home/'+ item]);
+        this.portfolioService.setPortfolioItem(item);
     }
 
-    ngOnDestroy() {
-        
-    }
+    ngOnDestroy() { }
 }

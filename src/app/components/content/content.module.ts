@@ -8,12 +8,22 @@ import { ContentComponent }   from './content.component';
 import { ContactComponent } from '../contact/contact.component';
 import { TitleComponent } from '../title/title.component';
 
-import { TypewriteDirective } from '../../directives/typewrite.directive';
-
 @NgModule({
-    imports: [BrowserModule, AboutModule, PortfolioModule],
-    exports: [ContentComponent, ContactComponent, TitleComponent],
-    declarations: [ContentComponent, ContactComponent, TitleComponent],
+    imports: [
+        BrowserModule, 
+        AboutModule, 
+        PortfolioModule
+    ],
+    exports: [
+        ContentComponent, 
+        ContactComponent, 
+        TitleComponent
+    ],
+    declarations: [
+        ContentComponent, 
+        ContactComponent, 
+        TitleComponent
+    ],
     providers: [],
 })
 export class ContentModule { }

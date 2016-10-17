@@ -2,7 +2,15 @@
     <div class="left arrow-container"></div>
     <div class="container carousel-inner">
         <div class="tile-container">
-            <router-outlet></router-outlet>
+            <div *ngIf="getSelectedPortfolioItem() == 'projects'">
+                <projects></projects>
+            </div>
+            <div *ngIf="getSelectedPortfolioItem() == 'experience'">
+                <experience></experience>
+            </div>
+            <div *ngIf="getSelectedPortfolioItem() == 'technologies'">
+                <technologies></technologies>
+            </div>
         </div>
     </div>
     <div class="right arrow-container"></div>

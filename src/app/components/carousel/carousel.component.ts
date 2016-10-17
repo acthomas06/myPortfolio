@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
     selector: 'carousel',
@@ -9,16 +10,24 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CarouselComponent implements OnInit {
     activatedRoute: ActivatedRoute;
     paramsSub: any;
-    constructor(router: Router, activatedRoute: ActivatedRoute) {
+    portfolioService: PortfolioService;
+
+    constructor(router: Router, 
+                activatedRoute: ActivatedRoute,
+                portfolioService: PortfolioService) {
         this.activatedRoute = activatedRoute;
+        this.portfolioService = portfolioService;
     }
 
     ngOnInit() {
-        this.paramsSub = this.activatedRoute.queryParams.subscribe((item) => console.log(item));
-        
-     }
+               
+    }
 
-     ngOnDestroy() {
-         
-     }
+    ngOnDestroy() {
+        
+    }
+
+    getSelectedPortfolioItem(): string {
+        return this.portfolioService.getSelectedPortfolioItem();
+    }
 }

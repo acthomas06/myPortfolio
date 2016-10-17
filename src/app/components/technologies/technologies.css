@@ -1,5 +1,13 @@
-.image-tile.spread {
-    margin: 20px;
-    height: auto;
-    width: auto;
+.image-tile {
+    vertical-align: middle;
+    position: relative;
+    display: table-cell;
+    height: 125px;
+    width: 250px; 
+    margin: 16px;
+    padding: 4px;
+}
+
+img.technology {
+    margin: auto 24px;
 }

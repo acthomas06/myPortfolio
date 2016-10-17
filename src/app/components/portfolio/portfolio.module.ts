@@ -1,36 +1,20 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
-import { PORTFOLIO_ROUTES } from './portfolio.routes';
+import { CarouselModule } from '../carousel/carousel.module';
 
 //Components & Directives
 import { PortfolioComponent } from './portfolio.component';
-import { PreviewDirective } from '../../directives/preview.directive';
-import { ProjectsComponent } from '../projects/projects.component';
-import { ExperienceComponent } from '../experience/experience.component';
-import { TechnologiesComponent } from '../technologies/technologies.component';
-import { CarouselComponent } from '../carousel/carousel.component';
 
 @NgModule({
     imports: [
         BrowserModule, 
-        RouterModule
+        CarouselModule
     ],
     exports: [
-        PortfolioComponent, 
-        PreviewDirective, 
-        ProjectsComponent, 
-        ExperienceComponent, 
-        TechnologiesComponent, 
-        CarouselComponent
+        PortfolioComponent 
     ],
     declarations: [
-        PortfolioComponent, 
-        PreviewDirective, 
-        ProjectsComponent, 
-        ExperienceComponent, 
-        TechnologiesComponent, 
-        CarouselComponent
+        PortfolioComponent
     ],
     providers: [],
 })  

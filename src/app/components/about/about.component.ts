@@ -7,19 +7,19 @@ import { TypeWriterService } from '../../services/typewriter.service';
     styles: [require('./about.css'), require('../content.css')]
 })
 export class AboutComponent implements OnInit {
-    saidHi: boolean = false;
-    introduced: boolean = false;
     typeWriter: TypeWriterService;
+    animationFinished: boolean;
     showTypeWrite: boolean = false;
-    
+    blurb: string = "I'm a web developer from Lehi, Utah.  I specialize in Angular, Angular 2, and React Javascript frameworks.  Check out my Portfolio section to see past projects and experience!";
+
     constructor(typeWriterService: TypeWriterService) {
         this.typeWriter = typeWriterService;
      }
     
-    isAnimationFinished(item: string) {
-        this.typeWriter.getTypeWriterChangeEmitter().subscribe((data) => {
-            return (data.value == item);
-        });
+    isAnimationFinished(ev) {        
+        this.animationFinished = ev;       
+
+        return ev;
     }
 
     ngOnInit() {
