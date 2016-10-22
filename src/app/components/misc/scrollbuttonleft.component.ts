@@ -31,41 +31,30 @@ export class ScrollBtnLeft {
 
     scrollLeft() {
         
-        let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.tile-container');
-        let marginValue = parseInt(scrollContainer.style.marginLeft);
-        
-        if (marginValue != 0) {
-            // this.renderer.animate(
+        let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.project-container');
+        let marginValue = Number(scrollContainer.style.marginLeft);
+        let scrollContainerWidth = parseInt(scrollContainer.offsetWidth);
+        // console.log(marginValue);
+        // console.log(scrollContainerWidth);
+
+        // if (!marginValue) {
+        //     marginValue = Number(scrollContainer.style.marginLeft);
+        // }
+        // if (marginValue <= 0) {
+            // this.renderer.invokeElementMethod(
             //     scrollContainer,
-            //     {
-            //         styles: [{'marginLeft': marginValue}]
-            //     },
-            //     [                    
-            //         {
-            //             offset: .5,
-            //             styles: {
-            //                 styles: [
-            //                     {'marginLeft': marginValue}
-            //                 ]
-            //             }
-            //         },
-            //         {
-            //             offset: 1,
-            //             styles: {
-            //                 styles: [
-            //                     {'marginLeft': ((marginValue + 210) + '%')}
-            //                 ]
-            //             }                        
-            //         }                    
-            //     ],
-            //     2,
-            //     1,
-            //     'linear'
+            //     'animate',                
+            //     [
+            //         [
+            //             {marginLeft: (marginValue + 'px')},
+            //             {marginLeft: (scrollContainerWidth + 'px')}
+            //         ]
+            //     ]
             // );
-            this.canAnimateLeft.emit(true);
-            this.renderer.setElementStyle(scrollContainer, 'margin-left', ((marginValue + 210).toString()) + '%');
-        } else {
-            this.canAnimateLeft.emit(false);
-        }
+            this.canAnimateLeft.emit('clicked');
+            // this.renderer.setElementStyle(scrollContainer, 'margin-left', ((marginValue + 210).toString()) + '%');
+        // } else {
+        //     this.canAnimateLeft.emit(false);
+        // }
     }
 }

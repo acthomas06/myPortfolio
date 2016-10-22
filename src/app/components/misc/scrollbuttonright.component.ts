@@ -29,15 +29,23 @@ export class ScrollBtnRight {
     } 
 
     scrollRight() {
-        let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.tile-container');
-        let marginValue = parseInt(scrollContainer.style.marginLeft);
+        let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.project-container');
+        let marginValue = scrollContainer.style.marginLeft;
+        let scrollContainerWidth = scrollContainer.offsetWidth;
+        marginValue = parseInt(marginValue, 10);
+
+        // if (!marginValue) {
+        //     marginValue = Number(scrollContainer.style.marginLeft);
+        // }
+        // console.log(marginValue);
+        // console.log(scrollContainerWidth);
         
-        if (marginValue > (-420)) {
+        // if (marginValue > (-420)) {
             // this.renderer.animate(
             //     scrollContainer,
             //     {
             //         styles: [
-            //             {'margin-left': 0}
+            //             {'margin-left': marginValue}
             //         ]
             //     },
             //     [                    
@@ -62,10 +70,10 @@ export class ScrollBtnRight {
             //     .5,
             //     'linear'
             // );
-            this.canAnimateRight.emit(true);
-            this.renderer.setElementStyle(scrollContainer, 'margin-left', ((marginValue - 210).toString()) + '%');
-        } else {
-            this.canAnimateRight.emit(false);
-        }
+            this.canAnimateRight.emit('clicked');
+            // this.renderer.setElementStyle(scrollContainer, 'margin-left', (-scrollContainerWidth + 'px'));
+        // } else {
+        //     this.canAnimateRight.emit(false);
+        // }
     }
 }

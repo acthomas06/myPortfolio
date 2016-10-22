@@ -1,6 +1,4 @@
 import { Component,
-         OnInit,
-         Input,
          trigger,
          state,
          style,
@@ -8,18 +6,25 @@ import { Component,
          animate,
          keyframes } from '@angular/core';
 
-let value = 0;
 export const CarouselAnimations = [
-    trigger('animateLeft', [
-        state('true', style({
-            marginLeft: (value + 210) + '%'
-        })),
-        transition('void <=> *', animate('500ms ease-in'))
+    trigger('leftButtonClick', [
+        state('clicked', style({transform: 'translateX(105%)'})),
+        transition('void => *', 
+            animate(300, keyframes([
+                style({transform: 'translateX(0)', offset: 0}),
+                style({transform: 'translateX(50%)', offset: .5}),
+                style({transform: 'translateX(105%)', offset: 1})
+            ]))
+        )
     ]),
-    trigger('animateRight', [
-        state('true', style({
-            marginLeft: (value - 210) + '%'
-        })),
-        transition('void <=> *', animate('500ms ease-in'))
+    trigger('rightButtonClick', [
+        state('clicked', style({transform: 'translateX(-105%)'})),
+        transition('void => *', 
+            animate(300, keyframes([
+                style({transform: 'translateX(0)', opacity: '1', offset: 0}),
+                style({transform: 'translateX(-50%)', opacity: '.5', offset: .5}),
+                style({transform: 'translateX(-105%)', opacity: '0', offset: 1})
+            ]))
+        )
     ])
 ];

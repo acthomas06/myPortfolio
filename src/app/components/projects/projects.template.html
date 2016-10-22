@@ -1,7 +1,23 @@
-<div class="image-tile" *ngFor="let image of portfolioImages">
-    <div class="image-container" [preview]="image.url">
-        <img class="project" alt="{{image.name}}" height="135px" width="240px" src="./assets/{{image.url}}.png"/>
-        <img class="magnifier" src="./assets/magnifier.svg"/>
-        <img class="company" src="./assets/{{image.name}}.png" height="16px" width="65px"/>
+<div class="image-tile-container" *ngFor="let image of portfolioImages">
+    <div class="image-tile" *ngFor="let img of image.page_one">    
+        <div class="image-container" [preview]="img.url">
+            <img class="project" alt="{{img.name}}" height="120px" width="210px" src="./assets/{{img.url}}.png"/>
+            <img class="magnifier" src="./assets/magnifier.svg"/>
+            <img class="company" src="./assets/{{img.name}}.png" height="16px" width="65px"/>
+        </div>
+    </div>
+    <div class="image-tile" *ngFor="let img of image.page_two">    
+        <div class="image-container" [preview]="img.url">
+            <img class="project" alt="{{img.name}}" height="135px" width="240px" src="./assets/{{img.url}}.png"/>
+            <img class="magnifier" src="./assets/magnifier.svg"/>
+            <img class="company" src="./assets/{{img.name}}.png" height="16px" width="65px"/>
+        </div>
+    </div>
+    <div class="image-tile" *ngFor="let img of image.page_three">    
+        <div class="image-container" [preview]="img.url">
+            <img class="project" alt="{{img.name}}" height="135px" width="240px" src="./assets/{{img.url}}.png"/>
+            <img class="magnifier" src="./assets/magnifier.svg"/>
+            <img class="company" src="./assets/{{img.name}}.png" height="16px" width="65px"/>
+        </div>
     </div>
 </div>

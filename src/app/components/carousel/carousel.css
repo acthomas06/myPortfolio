@@ -1,11 +1,11 @@
 .tile-container {
-    max-width: 200%;
-    width: 100%;
     display: inline-block;
-    margin-left: 100px;
-    margin-right: 0px;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 3% auto;
+}
+
+.project-container {
+    width: 350%;
+    max-width: 400%;
 }
 
 .carousel-container {
@@ -16,7 +16,7 @@
     margin: 32px 130px;
 }
 
-.carousel-inner.container {
+.carousel-inner {
     height: 100%;
     overflow: hidden;
 }

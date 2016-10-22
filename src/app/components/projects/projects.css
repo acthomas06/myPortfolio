@@ -1,10 +1,14 @@
+.image-tile-container {
+    display: inline-block;
+    float: left;
+}
+
 .image-tile {
-    vertical-align: middle;
     position: relative;
-    display: table-cell;
+    display: inline-block;
     height: 125px;
-    width: 250px; 
-    margin: 16px;
+    width: 245px; 
+    margin: auto 1px;
     padding: 4px;
 }
 
@@ -13,7 +17,7 @@ img.project {
     border: 1px solid #FFFFFF;
     border-radius: 4px;
     max-width: 100%;
-    min-width: 250px;
+    min-width: 230px;
     -webkit-filter: brightness(100%);
     cursor: pointer;
 
@@ -31,7 +35,7 @@ img.magnifier {
 
 img.company {
     position: absolute;
-    top: 125px;
+    top: 110px;
     right: 20px;
     opacity: 0;
 }

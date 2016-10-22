@@ -1,18 +1,18 @@
 <div class="carousel-container">
-    <scrollBtnLeft (canAnimateLeft)="leftAnimate($event)"></scrollBtnLeft>
-    <div class="container carousel-inner">
+    <scrollBtnLeft *ngIf="getSelectedPortfolioItem() == 'projects' || getSelectedPortfolioItem() == 'experience'" (canAnimateLeft)="leftAnimate($event)"></scrollBtnLeft>
+    <div class="carousel-inner">
         <!--TODO: Animations-->
-        <div class="tile-container" style="margin-left: 0%">
-            <div *ngIf="getSelectedPortfolioItem() == 'projects'">
+        <div class="tile-container">
+            <div class="project-container" *ngIf="getSelectedPortfolioItem() == 'projects'" [@leftButtonClick]="isLeftAnimate" [@rightButtonClick]="isRightAnimate">
                 <projects></projects>
             </div>
-            <div *ngIf="getSelectedPortfolioItem() == 'experience'">
+            <div class="experience-container" *ngIf="getSelectedPortfolioItem() == 'experience'">
                 <experience></experience>
             </div>
-            <div *ngIf="getSelectedPortfolioItem() == 'technologies'">
+            <div class="technologies-container" *ngIf="getSelectedPortfolioItem() == 'technologies'">
                 <technologies></technologies>
             </div>
         </div>
     </div>
-    <scrollBtnRight (canAnimateRight)="rightAnimate($event)"></scrollBtnRight>
+    <scrollBtnRight *ngIf="getSelectedPortfolioItem() == 'projects' || getSelectedPortfolioItem() == 'experience'" (canAnimateRight)="rightAnimate($event)"></scrollBtnRight>
 </div>
