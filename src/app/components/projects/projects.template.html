@@ -8,14 +8,14 @@
     </div>
     <div class="image-tile" *ngFor="let img of image.page_two">    
         <div class="image-container" [preview]="img.url">
-            <img class="project" alt="{{img.name}}" height="135px" width="240px" src="./assets/{{img.url}}.png"/>
+            <img class="project" alt="{{img.name}}" height="120px" width="210px" src="./assets/{{img.url}}.png"/>
             <img class="magnifier" src="./assets/magnifier.svg"/>
             <img class="company" src="./assets/{{img.name}}.png" height="16px" width="65px"/>
         </div>
     </div>
     <div class="image-tile" *ngFor="let img of image.page_three">    
         <div class="image-container" [preview]="img.url">
-            <img class="project" alt="{{img.name}}" height="135px" width="240px" src="./assets/{{img.url}}.png"/>
+            <img class="project" alt="{{img.name}}" height="120px" width="210px" src="./assets/{{img.url}}.png"/>
             <img class="magnifier" src="./assets/magnifier.svg"/>
             <img class="company" src="./assets/{{img.name}}.png" height="16px" width="65px"/>
         </div>
