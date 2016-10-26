@@ -1,4 +1,10 @@
-import { Component, OnInit, HostListener, ElementRef, Renderer } from '@angular/core';
+import { Component, OnInit, HostListener, ElementRef, Renderer,
+         trigger,
+         state,
+         style,
+         transition,
+         animate,
+         keyframes } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PortfolioService } from '../../services/portfolio.service';
 import { CarouselAnimations } from './carousel.animations';
@@ -7,7 +13,42 @@ import { CarouselAnimations } from './carousel.animations';
     selector: 'carousel',
     template: require('./carousel.template.html'),
     styles: [require('./carousel.css'), require('../content.css')],
-    animations: CarouselAnimations
+    animations: [
+            trigger('animateCarousel', [
+            state('page1', style({transform: 'translateX(0%)'})),
+            state('page2', style({transform: 'translateX(-28.5%)'})),
+            state('page3', style({transform: 'translateX(-57%)'})),
+            transition('* => page2', animate('600ms ease-in', style({transform: 'translateX(-28.5%)'}))),
+            transition('page1 => page2', [
+                animate('600ms ease-in', keyframes([
+                    style({transform: 'translateX(0%)', offset: 0}),
+                    style({transform: 'translateX(-18%)', offset: 0.5}),
+                    style({transform: 'translateX(-28.5%)', offset: 1.0})
+                ]))
+            ]),
+            transition('page2 => page1', [
+                animate('600ms ease-in', keyframes([
+                    style({transform: 'translateX(-28.5%)', offset: 0}),
+                    style({transform: 'translateX(-18%)', offset: 0.5}),
+                    style({transform: 'translateX(0%)', offset: 1.0})
+                ]))
+            ]),
+            transition('page2 => page3', [
+                animate('600ms ease-in', keyframes([
+                    style({transform: 'translateX(-28.5%)', offset: 0}),
+                    style({transform: 'translateX(-49%)', offset: 0.5}),
+                    style({transform: 'translateX(-57%)', offset: 1.0})
+                ]))
+            ]),
+            transition('page3 => page2', [
+                animate('600ms ease-in', keyframes([
+                    style({transform: 'translateX(-57%%)', offset: 0}),
+                    style({transform: 'translateX(-37.5%)', offset: 0.5}),
+                    style({transform: 'translateX(-28.5%)', offset: 1.0})
+                ]))
+            ])
+        ])
+    ]
 })
 export class CarouselComponent implements OnInit {
     activatedRoute: ActivatedRoute;
@@ -15,8 +56,10 @@ export class CarouselComponent implements OnInit {
     portfolioService: PortfolioService;
     elem: ElementRef;
     renderer: Renderer;
-    isRightAnimate: boolean;
-    isLeftAnimate: boolean;
+    isCanAnimate: string;
+    carouselStates: Array<string> = ['page1', 'page2', 'page3'];
+    i: number = 0;
+
     constructor(router: Router, 
                 activatedRoute: ActivatedRoute,
                 portfolioService: PortfolioService,
@@ -52,11 +95,29 @@ export class CarouselComponent implements OnInit {
         return this.portfolioService.getSelectedPortfolioItem();
     }
 
-    leftAnimate(ev) {
-        this.isLeftAnimate = ev;
+    animateLeft() {
+        if (this.i != 0) {
+            this.i--;
+            this.isCanAnimate = this.carouselStates[this.i];           
+        } else {
+            return false;
+        }
     }
 
-    rightAnimate(ev) {
-        this.isRightAnimate = ev;
+    animateRight() {
+        if (this.i < this.carouselStates.length-1) {
+            this.i++;
+            this.isCanAnimate = this.carouselStates[this.i];            
+        } else {
+            return false;
+        }
+    }
+
+    animationStarted(ev) {
+        // console.log(ev);
+    }
+
+    animationFinished(ev) {
+        // console.log(ev);
     }
 }

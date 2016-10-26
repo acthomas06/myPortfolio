@@ -22,39 +22,39 @@ export class ScrollBtnLeft {
         this.renderer = renderer;
     }
 
-    @Output() canAnimateLeft = new EventEmitter();
+    // @Output() canAnimateLeft = new EventEmitter();
 
-    @HostListener('click', ['$event'])
-    onClick() {
-        this.scrollLeft();
-    } 
+    // @HostListener('click', ['$event'])
+    // onClick() {
+    //     this.scrollLeft();
+    // } 
 
-    scrollLeft() {
+    // scrollLeft() {
         
-        let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.project-container');
-        let marginValue = Number(scrollContainer.style.marginLeft);
-        let scrollContainerWidth = parseInt(scrollContainer.offsetWidth);
-        // console.log(marginValue);
-        // console.log(scrollContainerWidth);
+    //     let scrollContainer = this.elem.nativeElement.parentNode.querySelector('.project-container');
+    //     let marginValue = Number(scrollContainer.style.marginLeft);
+    //     let scrollContainerWidth = parseInt(scrollContainer.offsetWidth);
+    //     // console.log(marginValue);
+    //     // console.log(scrollContainerWidth);
 
-        // if (!marginValue) {
-        //     marginValue = Number(scrollContainer.style.marginLeft);
-        // }
-        // if (marginValue <= 0) {
-            // this.renderer.invokeElementMethod(
-            //     scrollContainer,
-            //     'animate',                
-            //     [
-            //         [
-            //             {marginLeft: (marginValue + 'px')},
-            //             {marginLeft: (scrollContainerWidth + 'px')}
-            //         ]
-            //     ]
-            // );
-            this.canAnimateLeft.emit('clicked');
-            // this.renderer.setElementStyle(scrollContainer, 'margin-left', ((marginValue + 210).toString()) + '%');
-        // } else {
-        //     this.canAnimateLeft.emit(false);
-        // }
-    }
+    //     // if (!marginValue) {
+    //     //     marginValue = Number(scrollContainer.style.marginLeft);
+    //     // }
+    //     // if (marginValue <= 0) {
+    //         // this.renderer.invokeElementMethod(
+    //         //     scrollContainer,
+    //         //     'animate',                
+    //         //     [
+    //         //         [
+    //         //             {marginLeft: (marginValue + 'px')},
+    //         //             {marginLeft: (scrollContainerWidth + 'px')}
+    //         //         ]
+    //         //     ]
+    //         // );
+    //         this.canAnimateLeft.emit('left-clicked');
+    //         // this.renderer.setElementStyle(scrollContainer, 'margin-left', ((marginValue + 210).toString()) + '%');
+    //     // } else {
+    //     //     this.canAnimateLeft.emit(false);
+    //     // }
+    // }
 }

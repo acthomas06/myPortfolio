@@ -6,6 +6,7 @@
 .project-container {
     width: 350%;
     max-width: 400%;
+    transform: translateX(0%);
 }
 
 .carousel-container {
