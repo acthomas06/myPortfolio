@@ -22,7 +22,8 @@ export class PreviewDirective {
 
     openPreview(url: string) {
         let imageUrl = './assets/' + url + '.png';
-        let rootElem = this.el.nativeElement.parentNode;
+        let rootElem = this.el.nativeElement.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
+        console.log(rootElem);
         let parentElem = this.renderer.createElement(rootElem, 'div');
         let previewElem = this.renderer.createElement(rootElem, 'div');
         let imageElem = this.renderer.createElement(previewElem, 'img');
