@@ -28,7 +28,8 @@ var commonConfig = {
       /angular(\\|\/)core(\\|\/)src(\\|\/)linker/,
       root('./src'),
       {}
-    )
+    ),
+    new webpack.optimize.UglifyJsPlugin()
   ]
 
 };
