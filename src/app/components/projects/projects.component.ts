@@ -8,6 +8,7 @@ require('../../../assets/navigation_megatilenav_closed.png');
 require('../../../assets/navigation_megatilenav_expanded.png');
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
     selector: 'projects',
@@ -15,36 +16,16 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
     styles: [require('./projects.css'), require('../content.css')]
 })
 export class ProjectsComponent implements OnInit, OnDestroy {
-    constructor() { }
+    portfolioService: PortfolioService;
+    projectsItems: Array<Object>;
 
-    portfolioImages:Array<Object> = [
-        {
-            "page_one": [
-                {url: "persogenics_dashboard", name: "persogenics_logo"},
-                {url: "persogenics_employee_list", name: "persogenics_logo"},
-                {url: "persogenics_account_profile", name: "persogenics_logo"},
-                {url: "navigation_hamburger_expanded", name: "workfront_logo"},
-            ]
-        },
-        {
-            "page_two": [
-                {url: "navigation_meganav_closed", name: "workfront_logo"},
-                {url: "navigation_meganav_expanded", name: "workfront_logo"},
-                {url: "navigation_megatilenav_closed", name: "workfront_logo"},
-                {url: "navigation_megatilenav_expanded", name: "workfront_logo"},
-            ]
-        },
-        {
-            "page_three": [
-                {url: "tutapp_hero", name: "tutapp_logo"},
-                {url: "tutapp_left_iphone", name: "tutapp_logo"},
-                {url: "tutapp_right_iphone", name: "tutapp_logo"},
-                {url: "tutapp_footer", name: "tutapp_logo"}
-            ]
-        }              
-    ];
+    constructor(portfolioService:PortfolioService) {
+        this.portfolioService = portfolioService;
+        this.projectsItems = this.portfolioService.getProjectsImages();
+     }
 
     ngOnInit() { }
 
     ngOnDestroy() { }
+    
 }

@@ -1,3 +1,5 @@
-<div class="image-tile spread" *ngFor="let image of technologyImages">
-    <img class="technology" alt="{{image.name}}" height="{{image.height}}" width="{{image.width}}" src="./assets/{{image.name}}.png"/>
+<div class="image-tile-container" *ngFor="let image of technologyItems">
+    <div class="image-tile spread" *ngFor="let img of image.page_one">
+        <img class="technology" alt="{{img.name}}" height="{{img.height}}" width="{{img.width}}" src="./assets/{{img.name}}.png"/>
+    </div>
 </div>

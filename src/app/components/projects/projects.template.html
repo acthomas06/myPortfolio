@@ -1,4 +1,4 @@
-<div class="image-tile-container" *ngFor="let image of portfolioImages">
+<div class="image-tile-container" *ngFor="let image of projectsItems">
     <div class="image-tile" *ngFor="let img of image.page_one">    
         <div class="image-container" [preview]="img.url">
             <img class="project" alt="{{img.name}}" height="120px" width="210px" src="./assets/{{img.url}}.png"/>

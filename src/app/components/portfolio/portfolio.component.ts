@@ -1,8 +1,10 @@
 import { Component, 
-         OnInit } from '@angular/core';
+         OnInit,
+         ViewChild } from '@angular/core';
 import { Router, 
          ActivatedRoute } from '@angular/router';
 
+import { CarouselComponent } from '../carousel/carousel.component';
 import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
@@ -25,11 +27,16 @@ export class PortfolioComponent implements OnInit {
         this.portfolioService = portfolioService;
      }
 
-    ngOnInit() {}
+    @ViewChild(CarouselComponent)
+    private carouselComponent: CarouselComponent;
+
+    ngOnInit() {
+        this.portfolioService.setPortfolioItem(this.selectedCategory);
+    }
 
     selectCategory(item: string) {
         this.selectedCategory = item;
-        
+        this.carouselComponent.resetPage();
         this.portfolioService.setPortfolioItem(item);
     }
 

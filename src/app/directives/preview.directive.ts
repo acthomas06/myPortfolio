@@ -23,7 +23,6 @@ export class PreviewDirective {
     openPreview(url: string) {
         let imageUrl = './assets/' + url + '.png';
         let rootElem = this.el.nativeElement.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
-        console.log(rootElem);
         let parentElem = this.renderer.createElement(rootElem, 'div');
         let previewElem = this.renderer.createElement(rootElem, 'div');
         let imageElem = this.renderer.createElement(previewElem, 'img');
@@ -39,7 +38,6 @@ export class PreviewDirective {
         if (imageElem) {
             imageElem.classList += 'preview-image';
             imageElem.src = imageUrl;
-            console.log(imageElem.src)
         }
 
         this.renderer.listen(parentElem, 'click', (ev) => {

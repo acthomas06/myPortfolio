@@ -6,6 +6,7 @@ require('../../../assets/tutapp_logo.png');
 
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PortfolioService } from '../../services/portfolio.service';
 
 @Component({
     selector: 'experience',
@@ -14,19 +15,16 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ExperienceComponent implements OnInit, OnDestroy {
     route: ActivatedRoute;
-    constructor(route: ActivatedRoute) {
-        this.route = route;
-     }
+    portfolioService: PortfolioService;
+    experienceItems: Array<Object>;
 
-    experienceImages:Array<Object> = [
-        {name: "persogenics_logo", height: 35, url: "http://www.persogenics.com"},
-        {name: "workfront_logo", height: 45, url: "https://www.workfront.com"},
-        {name: "insidesales_logo", height: 65, url: "https://www.insidesales.com"},
-        {name: "devmountain_logo", height: 50, url: "https://www.devmountain.com"},
-        {name: "tutapp_logo", height: 35, url: "http://www.tutoring-app.com"}
-    ];
+    constructor(route: ActivatedRoute, portfolioService: PortfolioService) {
+        this.route = route;
+        this.portfolioService = portfolioService;
+        this.experienceItems = this.portfolioService.getExperienceImages();
+     }
 
     ngOnInit() {}
 
-    ngOnDestroy() { }
+    ngOnDestroy() {}
 }

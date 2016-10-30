@@ -13,42 +13,7 @@ import { CarouselAnimations } from './carousel.animations';
     selector: 'carousel',
     template: require('./carousel.template.html'),
     styles: [require('./carousel.css'), require('../content.css')],
-    animations: [
-            trigger('animateCarousel', [
-            state('page1', style({transform: 'translateX(0%)'})),
-            state('page2', style({transform: 'translateX(-28.5%)'})),
-            state('page3', style({transform: 'translateX(-57%)'})),
-            transition('* => page2', animate('400ms linear', style({transform: 'translateX(-28.5%)'}))),
-            transition('page1 => page2', [
-                animate('400ms linear', keyframes([
-                    style({transform: 'translateX(0%)', offset: 0}),
-                    style({transform: 'translateX(-18%)', offset: 0.5}),
-                    style({transform: 'translateX(-28.5%)', offset: 1.0})
-                ]))
-            ]),
-            transition('page2 => page1', [
-                animate('400ms linear', keyframes([
-                    style({transform: 'translateX(-28.5%)', offset: 0}),
-                    style({transform: 'translateX(-18%)', offset: 0.5}),
-                    style({transform: 'translateX(0%)', offset: 1.0})
-                ]))
-            ]),
-            transition('page2 => page3', [
-                animate('400ms linear', keyframes([
-                    style({transform: 'translateX(-28.5%)', offset: 0}),
-                    style({transform: 'translateX(-49%)', offset: 0.5}),
-                    style({transform: 'translateX(-57%)', offset: 1.0})
-                ]))
-            ]),
-            transition('page3 => page2', [
-                animate('400ms linear', keyframes([
-                    style({transform: 'translateX(-57%%)', offset: 0}),
-                    style({transform: 'translateX(-49%)', offset: 0.5}),
-                    style({transform: 'translateX(-28.5%)', offset: 1.0})
-                ]))
-            ])
-        ])
-    ]
+    animations: CarouselAnimations
 })
 export class CarouselComponent implements OnInit {
     activatedRoute: ActivatedRoute;
@@ -56,7 +21,8 @@ export class CarouselComponent implements OnInit {
     portfolioService: PortfolioService;
     elem: ElementRef;
     renderer: Renderer;
-    isCanAnimate: string;
+    isCanAnimate: string = 'page1';
+    carouselPages: number;
     carouselStates: Array<string> = ['page1', 'page2', 'page3'];
     i: number = 0;
 
@@ -69,6 +35,15 @@ export class CarouselComponent implements OnInit {
         this.portfolioService = portfolioService;
         this.elem = elem;
         this.renderer = renderer;
+        this.carouselPages = this.portfolioService.getSelectedPortfolioItemPageCount();
+    }
+
+    ngOnInit() {
+               
+    }
+
+    ngOnDestroy() {
+        
     }
 
     @HostListener('mouseenter', ['$event'])
@@ -81,14 +56,6 @@ export class CarouselComponent implements OnInit {
     onMouseLeave() {
         this.renderer.setElementStyle(this.elem.nativeElement.querySelector('.arrow-box.left'), 'display', 'none');
         this.renderer.setElementStyle(this.elem.nativeElement.querySelector('.arrow-box.right'), 'display', 'none');
-    }
-
-    ngOnInit() {
-               
-    }
-
-    ngOnDestroy() {
-        
     }
 
     getSelectedPortfolioItem(): string {
@@ -105,7 +72,7 @@ export class CarouselComponent implements OnInit {
     }
 
     animateRight() {
-        if (this.i < this.carouselStates.length-1) {
+        if (this.i < (this.portfolioService.getSelectedPortfolioItemPageCount() - 1)) {
             this.i++;
             this.isCanAnimate = this.carouselStates[this.i];            
         } else {
@@ -113,11 +80,8 @@ export class CarouselComponent implements OnInit {
         }
     }
 
-    animationStarted(ev) {
-        // console.log(ev);
-    }
-
-    animationFinished(ev) {
-        // console.log(ev);
+    resetPage() {
+        this.i = 0;
+        this.isCanAnimate = 'page1';
     }
 }

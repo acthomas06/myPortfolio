@@ -1,12 +1,13 @@
 .tile-container {
     display: inline-block;
-    margin: 3% auto;
+    margin: 32px auto;
 }
 
-.project-container {
+.project-container,
+.experience-container,
+.technologies-contianer {
     width: 350%;
     max-width: 400%;
-    transform: translateX(0%);
 }
 
 .carousel-container {

@@ -1,5 +1,12 @@
-<div class="image-tile stacked" *ngFor="let image of experienceImages">
-    <a href="{{image.url}}" target="_blank">
-        <img class="experience" alt="{{image.name}}" height="{{image.height}}" width="200px" src="./assets/{{image.name}}.png"/>
-    </a>
+<div class="image-tile-container" *ngFor="let image of experienceItems">
+    <div class="image-tile stacked" *ngFor="let img of image.page_one">
+        <a href="{{img.url}}" target="_blank">
+            <img class="experience" alt="{{img.name}}" height="{{img.height}}" width="200px" src="./assets/{{img.name}}.png"/>
+        </a>
+    </div>
+    <div class="image-tile stacked" *ngFor="let img of image.page_two">
+        <a href="{{img.url}}" target="_blank">
+            <img class="experience" alt="{{img.name}}" height="{{img.height}}" width="200px" src="./assets/{{img.name}}.png"/>
+        </a>
+    </div>
 </div>

@@ -1,4 +1,5 @@
 .image-tile-container {
+    min-width: 29%;
     display: inline-block;
     float: left;
 }
